@@ -464,7 +464,7 @@ export const TabKit: React.FC = () => {
                 <div className="flex items-start gap-2 bg-secondary-fixed/30 p-2 rounded-lg text-primary-container mt-1 font-body-sm text-body-sm">
                   <span className="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">location_on</span>
                   <span className="font-normal text-[12px] leading-tight">
-                    <strong>Envío Gratis:</strong> Entrega prioritaria en 24h a sedes hospitalarias de Lima (Rebagliati, Loayza, Almenara, Dos de Mayo).
+                    <strong>Envío Gratis:</strong> Entrega prioritaria express en Lima y envíos a todo el Perú por Shalom y Olva.
                   </span>
                 </div>
               </div>

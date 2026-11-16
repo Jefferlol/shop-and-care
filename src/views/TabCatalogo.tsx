@@ -77,7 +77,7 @@ export const TabCatalogo: React.FC = () => {
             <span className="material-symbols-outlined text-[18px] text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>
               local_shipping
             </span>
-            <span className="text-xs sm:text-sm">Envíos en 24h a Hospitales de Lima Metropolitana (Rebagliati, Almenara, Loayza, Dos de Mayo) y Courier express a todo el Perú</span>
+            <span className="text-xs sm:text-sm">Envíos express en Lima y a todo el Perú por Shalom y Olva Courier</span>
           </div>
           <div className="flex items-center gap-space-md">
             <span className="inline-flex items-center gap-1 bg-tertiary-fixed text-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">

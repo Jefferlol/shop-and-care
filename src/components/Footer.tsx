@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-primary-container text-on-primary py-space-xl border-t border-primary/40">
       <div className="max-w-7xl mx-auto px-margin">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg pb-space-lg border-b border-on-primary/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-space-lg pb-space-lg border-b border-on-primary/10">
           {/* Col 1: Brand Info */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
@@ -22,44 +22,19 @@ export const Footer: React.FC = () => {
               </div>
             </div>
             <p className="font-body-sm text-body-sm text-on-primary/80 leading-relaxed">
-              Equipamiento clínico de precisión, confección peruana de alta tecnología antifluido y soporte profesional para estudiantes, internos y serumistas.
+              Equipamiento clínico de precisión, confección peruana de alta tecnología antifluido y soporte profesional para estudiantes, internos y profesionales de la salud.
             </p>
             <div className="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary-fixed-dim">
               <span className="material-symbols-outlined text-[16px]">verified</span>
               <span>Confección nacional y telas antifluido de alta durabilidad</span>
             </div>
+            <div className="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary-fixed-dim">
+              <span className="material-symbols-outlined text-[16px]">local_shipping</span>
+              <span>Envíos express por Shalom y Olva Courier a todo el Perú</span>
+            </div>
           </div>
 
-          {/* Col 2: Hospitales y Sedes */}
-          <div className="flex flex-col gap-2.5">
-            <span className="font-label-md text-label-md font-bold uppercase tracking-wider text-secondary-fixed-dim">
-              Sedes Frecuentes
-            </span>
-            <ul className="space-y-1.5 font-body-sm text-body-sm text-on-primary/80">
-              <li className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[15px] text-tertiary-fixed">location_on</span>
-                <span>Hosp. Nacional Edgardo Rebagliati Martins</span>
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[15px] text-tertiary-fixed">location_on</span>
-                <span>Hosp. Nacional Guillermo Almenara Irigoyen</span>
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[15px] text-tertiary-fixed">location_on</span>
-                <span>Hosp. Nacional Arzobispo Loayza</span>
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[15px] text-tertiary-fixed">location_on</span>
-                <span>Hosp. Nacional Dos de Mayo &amp; San Bartolomé</span>
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[15px] text-secondary-fixed-dim">local_shipping</span>
-                <span>Envíos express por Shalom y Olva a todo el Perú</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 3: Navegación Rápida */}
+          {/* Col 2: Navegación Rápida */}
           <div className="flex flex-col gap-2.5">
             <span className="font-label-md text-label-md font-bold uppercase tracking-wider text-secondary-fixed-dim">
               Navegación
@@ -100,13 +75,13 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4: Atención & Contacto Directo */}
+          {/* Col 3: Atención & Contacto Directo */}
           <div className="flex flex-col gap-2.5">
             <span className="font-label-md text-label-md font-bold uppercase tracking-wider text-secondary-fixed-dim">
               Atención Inmediata
             </span>
             <p className="font-body-sm text-body-sm text-on-primary/80">
-              ¿Dudas sobre tallas o requisitos de tu sede hospitalaria? Nuestro equipo te asiste en vivo:
+              ¿Dudas sobre tallas o pedidos? Nuestro equipo te asiste en vivo por WhatsApp:
             </p>
             <a
               href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hola Shop & Care, tengo una consulta sobre sus uniformes médicos e instrumental.')}`}
