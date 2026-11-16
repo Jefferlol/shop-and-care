@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "background": "#f6fafe",
+        "on-secondary-fixed-variant": "#154b6a",
+        "inverse-surface": "#2c3134",
+        "surface-container-low": "#f0f4f8",
+        "on-primary-container": "#7e9dd5",
+        "outline": "#747780",
+        "on-surface-variant": "#43474f",
+        "primary-fixed": "#d7e3ff",
+        "surface-container-high": "#e4e9ed",
+        "tertiary": "#39111f",
+        "error": "#ba1a1a",
+        "surface-variant": "#dfe3e7",
+        "primary-fixed-dim": "#aac7ff",
+        "on-primary-fixed": "#001b3e",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#683847",
+        "on-primary": "#ffffff",
+        "secondary-container": "#abdaff",
+        "surface-bright": "#f6fafe",
+        "tertiary-container": "#522634",
+        "surface-container": "#eaeef2",
+        "error-container": "#ffdad6",
+        "on-error": "#ffffff",
+        "on-tertiary": "#ffffff",
+        "on-secondary-fixed": "#001e2f",
+        "outline-variant": "#c4c6d1",
+        "inverse-on-surface": "#edf1f5",
+        "primary": "#001e44",
+        "surface": "#f6fafe",
+        "tertiary-fixed-dim": "#f6b5c6",
+        "surface-dim": "#d6dade",
+        "tertiary-fixed": "#ffd9e1",
+        "surface-container-highest": "#dfe3e7",
+        "on-tertiary-container": "#c88c9c",
+        "primary-container": "#0d3365",
+        "secondary": "#336383",
+        "secondary-fixed-dim": "#9dccf0",
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-fixed": "#340e1c",
+        "on-primary-fixed-variant": "#264679",
+        "on-surface": "#171c1f",
+        "secondary-fixed": "#c9e6ff",
+        "surface-tint": "#405e93",
+        "on-background": "#171c1f",
+        "on-secondary-container": "#2f6080",
+        "inverse-primary": "#aac7ff",
+        "on-error-container": "#93000a"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "space-sm": "0.5rem",
+        "gutter": "1.5rem",
+        "margin-mobile": "1rem",
+        "gutter-mobile": "0.75rem",
+        "space-xl": "2.5rem",
+        "space-xs": "0.25rem",
+        "margin": "2rem"
+      },
+      "fontFamily": {
+        "headline-md": ["Plus Jakarta Sans"],
+        "label-lg": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "body-lg": ["Inter"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "headline-xl": ["Plus Jakarta Sans"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "body-md": ["Inter"],
+        "headline-xl-mobile": ["Plus Jakarta Sans"],
+        "body-sm": ["Inter"],
+        "headline-lg": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "headline-xl-mobile": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}]
+      }
+    }
+  }
+};
+</script>
+</head>
+<body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface">
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-high">
+<div class="w-full bg-primary-container text-on-primary py-1 px-margin text-center font-label-sm text-label-sm tracking-wide flex items-center justify-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-[15px] text-secondary-fixed-dim">local_shipping</span>
+<span>Envíos en 24h a Hospitales de Lima Metropolitana (Rebagliati, Almenara, Loayza, Dos de Mayo)</span>
+<span class="opacity-40 mx-space-xs">|</span>
+<span class="font-bold text-tertiary-fixed">CAMPAÑA INTERNADO 2025:</span>
+<span>15% DTO en kits completos</span>
+</div>
+<div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center justify-center w-10 h-10 rounded-xl bg-surface-container-low text-primary shadow-sm border border-surface-container-high relative">
+<span class="material-symbols-outlined text-[24px] text-primary-container">stethoscope</span>
+<span class="material-symbols-outlined text-[12px] text-tertiary-fixed-dim absolute -top-1 -right-1">favorite</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary-container tracking-tight leading-none">Shop &amp; Care</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal mt-0.5">Uniformes médicos, accesorios y más</span>
+</div>
+</div>
+<nav class="hidden lg:flex items-center bg-surface-container-low p-1.5 rounded-lg border border-surface-container-high gap-1" data-active-classes="bg-secondary-fixed-dim text-primary-container font-bold rounded-lg shadow-sm">
+<a class="font-label-lg text-label-lg px-4 py-2 rounded-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="inicio" href="#">Inicio</a>
+<a class="font-label-lg text-label-lg px-4 py-2 rounded-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="catalogo" href="#">Catálogo</a>
+<a class="font-label-lg text-label-lg px-4 py-2 rounded-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="arma-tu-kit" href="#">Arma tu Kit</a>
+<a class="font-label-lg text-label-lg px-4 py-2 rounded-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="guia-y-comunidad" href="#">Guía y Comunidad</a>
+</nav>
+<div class="flex items-center gap-space-md">
+<a class="inline-flex items-center gap-space-xs bg-tertiary-fixed text-primary-container font-label-lg text-label-lg px-space-md py-2.5 rounded-full hover:bg-tertiary-fixed-dim transition-colors shadow-[0_2px_8px_-2px_rgba(13,51,101,0.08)]" data-path="guia-y-comunidad" href="#">
+<span class="material-symbols-outlined text-[18px]">featured_seasonal_and_gifts</span>
+<span>Guía Gratis + 15% DTO</span>
+</a>
+<div class="flex items-center gap-space-xs pl-space-xs">
+<img alt="Doctor Avatar" class="w-9 h-9 rounded-full object-cover ring-2 ring-secondary-fixed shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWoaciru_fMiZBbrSNKMC4EUdDVrgiHlBgckY_fFlLiJZtvUFpL__5MVcp9sCLB1VDvrsASc7teZ6hvEWyjrfLbShTPfA8KxI2rbGg3rvYde8bBpnuHP_hwm6fdT5xyMgSFuQ0NIM7Jcbe4V5DywOZmKIoZW9R6dYzqNz6JetoDXSRH1Z0NI1so2JTW6NlFRTVJ8nWyP51Q_orgxBbr5ZXqS04T51NJesNnLqxftzM"/>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-28 bg-surface-container-lowest min-h-[calc(100vh-140px)]">
+<div class="flex flex-col w-full">
+<div class="w-full bg-gradient-to-b from-surface-container-low/60 via-surface-container-lowest to-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-margin py-space-xl">
+<!-- Eyebrow + Header Info -->
+<div class="flex flex-col items-start gap-space-sm mb-space-lg">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-tertiary-fixed text-primary-container font-label-sm text-label-sm uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-container">menu_book</span>
+<span>Material Educativo Gratuito Internado 2025</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-container tracking-tight max-w-4xl">
+          Manual de Supervivencia para Internos y Residentes en Perú
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+          34 páginas de dosis clínicas de emergencia, vademécum de guardia, códigos de vestimenta por hospital y tips de supervivencia para turnos de 24h y 36h.
+        </p>
+</div>
+<!-- Main Two-Column Split: Editorial Book Mockup & Lead Capture -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-stretch">
+<!-- Left Column: Realistic Editorial Ebook Mockup (Col 7) -->
+<div class="lg:col-span-7 flex flex-col justify-between p-space-lg bg-surface-container-low rounded-xl relative overflow-hidden shadow-sm">
+<!-- Subtle Glow Overlay -->
+<div class="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-secondary-fixed-dim/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-tertiary-fixed/30 blur-3xl pointer-events-none"></div>
+<!-- Upper Badges -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm z-10">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-lowest text-primary-container font-label-md text-label-md rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              34 Páginas de Bolsillo
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md rounded-full">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+              Revisado por Médicos de San Marcos &amp; Cayetano
+            </span>
+</div>
+<!-- Visual Book Showcase -->
+<div class="my-space-lg relative flex items-center justify-center z-10">
+<!-- Simulated Realistic Medical Pocket Manual -->
+<div class="relative w-full max-w-md bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden flex flex-col">
+<!-- Book Header Foil -->
+<div class="bg-primary-container p-6 text-on-primary relative">
+<div class="flex items-center justify-between opacity-80 font-label-sm text-label-sm tracking-widest uppercase mb-4">
+<span>Edición de Guardia • 2025</span>
+<span class="inline-flex items-center gap-1 text-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]">local_hospital</span>
+                    Clínica &amp; Urgencias
+                  </span>
+</div>
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-primary">
+                  GUÍA DE SUPERVIVENCIA CLÍNICA 2025
+                </div>
+<div class="font-label-md text-label-md text-secondary-fixed-dim mt-1 tracking-wide">
+                  SHOP &amp; CARE PERÚ • RECURSO MÉDICO OFICIAL
+                </div>
+<!-- Spine accent bar -->
+<div class="absolute left-0 top-0 bottom-0 w-2.5 bg-secondary-fixed-dim"></div>
+</div>
+<!-- Inner Spec & Book Sections -->
+<div class="p-6 bg-surface-container-lowest flex flex-col gap-4">
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="p-2.5 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[22px] block mb-1">prescriptions</span>
+<span class="font-label-sm text-label-sm font-bold text-primary-container block">Antibióticos</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block">Gram +/- y UCI</span>
+</div>
+<div class="p-2.5 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[22px] block mb-1">ecg_heart</span>
+<span class="font-label-sm text-label-sm font-bold text-primary-container block">Hemodinamia</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block">Shock y PAM</span>
+</div>
+<div class="p-2.5 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[22px] block mb-1">checklist</span>
+<span class="font-label-sm text-label-sm font-bold text-primary-container block">Pre-Guardia</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block">Mochila esencial</span>
+</div>
+</div>
+<!-- Page preview excerpt strip -->
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-label-md text-label-md font-bold">
+                      p.14
+                    </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-primary-container">Código de Vestimenta Hospitalario</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rebagliati vs Almenara vs Loayza</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">chevron_right</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Formato: PDF Optimizado Celular &amp; Imprimible</span>
+<span class="font-label-sm text-label-sm font-bold text-primary-container bg-tertiary-fixed px-2 py-0.5 rounded">100% Gratis</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Micro-Stats / Social Proof -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-sm z-10">
+<div class="flex items-center gap-space-sm">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-[11px] font-bold shadow-sm ring-2 ring-surface-container-lowest">UN</div>
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-[11px] font-bold shadow-sm ring-2 ring-surface-container-lowest">UP</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-primary flex items-center justify-center font-label-sm text-[11px] font-bold shadow-sm ring-2 ring-surface-container-lowest">CH</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                Descargado por estudiantes de San Marcos, Cayetano, UCSUR y UPC.
+              </span>
+</div>
+<div class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-[16px]">devices</span>
+<span>Lectura sin conexión</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Registration Card (Col 5) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between relative">
+<!-- Form Header -->
+<div class="flex flex-col gap-2">
+<div class="inline-flex items-center gap-1 text-primary-container font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">card_giftcard</span>
+<span>Acceso Inmediato + Cupón</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary-container font-bold">
+              Descarga la Guía en PDF + Bono 15% DTO en tu Primer Pedido
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Completa tus datos clínicos para recibir la descarga instantánea y tu código de bienvenida para scrubs y accesorios.
+            </p>
+</div>
+<!-- Form Fields -->
+<form class="flex flex-col gap-space-sm mt-space-md" id="guide-form" onsubmit="event.preventDefault(); handleFormSubmit();">
+<!-- Field 1: Nombre y Apellido -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary-container font-semibold" for="lead-name">
+                Nombre y Apellido
+              </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">person</span>
+<input class="w-full pl-10 pr-3 py-2.5 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" id="lead-name" placeholder="Ej. Andrea Mendoza" required="" type="text"/>
+</div>
+</div>
+<!-- Field 2: Correo Institucional / Personal -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary-container font-semibold" for="lead-email">
+                Correo Electrónico
+              </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">mail</span>
+<input class="w-full pl-10 pr-3 py-2.5 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" id="lead-email" placeholder="tu.correo@unmsm.edu.pe" required="" type="email"/>
+</div>
+</div>
+<!-- Field 3: WhatsApp -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary-container font-semibold" for="lead-phone">
+                WhatsApp
+              </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">chat</span>
+<input class="w-full pl-10 pr-3 py-2.5 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" id="lead-phone" placeholder="+51 987 654 321" required="" type="tel"/>
+</div>
+</div>
+<!-- Field 4: Carrera o Especialidad -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-primary-container font-semibold" for="lead-specialty">
+                Carrera o Especialidad
+              </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">school</span>
+<select class="w-full pl-10 pr-8 py-2.5 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest appearance-none transition-all" id="lead-specialty">
+<option value="med_internado">Medicina Humana (Internado 2025)</option>
+<option value="med_residentado">Médico Residente (R1 - R3)</option>
+<option value="enfermeria">Lic. en Enfermería / Internado</option>
+<option value="obstetricia">Obstetricia &amp; Cuidados Críticos</option>
+<option value="tecnologia">Tecnología Médica / Laboratorio</option>
+<option value="med_general">Médico General / Serums</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Privacy Policy Checkbox -->
+<label class="flex items-start gap-2.5 cursor-pointer mt-1">
+<input checked="" class="mt-0.5 rounded text-primary-container focus:ring-0 accent-primary-container" required="" type="checkbox"/>
+<span class="font-body-sm text-[12px] text-on-surface-variant leading-snug">
+                Acepto recibir la guía y actualizaciones clínicas. Prometemos no enviar spam; solo guías y descuentos útiles de guardia.
+              </span>
+</label>
+<!-- Submit CTA Button -->
+<button class="w-full mt-2 py-3 px-6 rounded-xl bg-secondary-fixed-dim text-primary-container font-headline-sm text-body-md font-bold flex items-center justify-center gap-2 hover:bg-secondary-container transition-all shadow-sm active:scale-[0.99]" id="submit-btn" type="submit">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Obtener mi guía y 15% DTO</span>
+</button>
+</form>
+<!-- Feedback Success State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center text-center p-6 bg-surface-container-low rounded-xl gap-2 mt-4" id="form-success">
+<span class="material-symbols-outlined text-[36px] text-secondary">check_circle</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">¡Descarga en Camino!</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Revisa tu WhatsApp y bandeja de entrada. Tu código <strong class="text-primary-container font-bold">INTERNO2025</strong> de 15% DTO ya está activo.
+            </p>
+</div>
+<!-- Trust Subtext -->
+<div class="mt-4 pt-3 flex items-center justify-center gap-2 text-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">bolt</span>
+<span>Enlace enviado de inmediato a tu WhatsApp y correo. <strong>2,417 estudiantes</strong> ya la tienen.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Frequently Asked Questions (FAQ) Section -->
+<div class="w-full bg-surface-container-low/40 py-space-xl">
+<div class="max-w-4xl mx-auto px-margin">
+<!-- Section Title -->
+<div class="text-center mb-space-lg">
+<span class="inline-block font-label-md text-label-md font-bold uppercase tracking-wider text-secondary mb-1">
+          Resolviendo tus dudas de guardia
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-primary-container font-bold">
+          Preguntas Frecuentes sobre Uniformes, Envíos y Guardias
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl mx-auto">
+          Sabemos que tu tiempo es corto entre rondas y pases de visita. Aquí las respuestas claras y sin rodeos.
+        </p>
+</div>
+<!-- FAQ Accordion Layout (4 items) -->
+<div class="flex flex-col gap-space-sm">
+<!-- Accordion Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all faq-item">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-4 font-headline-sm text-body-lg text-primary-container font-bold hover:text-secondary transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-lg bg-surface-container-low text-primary-container flex items-center justify-center font-label-sm text-label-sm">01</span>
+<span>¿Hacen envíos directos a residencias médicas o puertas de hospitales?</span>
+</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md hidden pl-14">
+            Sí, coordinamos entregas prioritarias directas en los accesos de emergencia y residencias de hospitales de Lima (Rebagliati, Almenara, Dos de Mayo, Loayza, San Bartolomé) y envíos express por Olva Courier y Shalom a todo el país.
+          </div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all faq-item">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-4 font-headline-sm text-body-lg text-primary-container font-bold hover:text-secondary transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-lg bg-surface-container-low text-primary-container flex items-center justify-center font-label-sm text-label-sm">02</span>
+<span>¿Las telas cumplen con la norma técnica de bioseguridad del MINSA y EsSalud?</span>
+</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md hidden pl-14">
+            Absolutamente. Nuestros textiles tienen 99.4% de repelencia antifluido comprobada, resisten autoclave y lavados intensivos hospitalarios sin perder coloración ni textura stretch 4-way.
+          </div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all faq-item">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-4 font-headline-sm text-body-lg text-primary-container font-bold hover:text-secondary transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-lg bg-surface-container-low text-primary-container flex items-center justify-center font-label-sm text-label-sm">03</span>
+<span>¿Puedo bordar el logo de mi universidad y mi nombre en las filipinas?</span>
+</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md hidden pl-14">
+            Sí, ofrecemos bordado computarizado de alta definición con escudos oficiales (San Marcos, Cayetano Heredia, UPC, UCSUR, San Martín, etc.) y tu rango médico. Puedes configurarlo al añadir tu kit o enviarnos tu logo personalizado por WhatsApp.
+          </div>
+</div>
+<!-- Accordion Item 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all faq-item">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-4 font-headline-sm text-body-lg text-primary-container font-bold hover:text-secondary transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-lg bg-surface-container-low text-primary-container flex items-center justify-center font-label-sm text-label-sm">04</span>
+<span>¿Qué pasa si la talla que elegí en mi kit no me queda bien?</span>
+</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transform transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md text-on-surface-variant font-body-md text-body-md hidden pl-14">
+            Tienes 30 días para cambio de talla sin costo adicional en Lima Metropolitana. Te llevamos la nueva talla y recogemos la anterior sin complicarte el turno. Para provincias, cubrimos el 100% del flete de reenvío.
+          </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Community Feedback Section ('Buzón de Reseñas y Feedback') -->
+<div class="w-full bg-surface-container-lowest py-space-xl">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div class="max-w-2xl">
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider text-secondary">
+            Voz Colectiva Shop &amp; Care
+          </span>
+<h2 class="font-headline-lg text-headline-lg text-primary-container font-bold mt-1">
+            Buzón de Reseñas y Feedback de la Comunidad Médica
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
+            ¿Tienes sugerencias para futuros modelos de scrubs o temas para la guía? Tu opinión da forma a las próximas colecciones.
+          </p>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-primary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">forum</span>
+<span>482 Aportes Recibidos Este Mes</span>
+</div>
+</div>
+<!-- Feedback Grid: Interactive Form (Col 6) + Verified Community Peer Reviews (Col 6) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Feedback Submission Box -->
+<div class="lg:col-span-6 bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">
+              Envía tu Aporte o Testimonio
+            </span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-primary-container font-label-sm text-label-sm font-bold">
+              Directo a Producción
+            </span>
+</div>
+<!-- Star Rating Selector -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-md text-label-md text-primary-container font-semibold">
+              Calificación de Experiencia o Sugerencia
+            </span>
+<div class="flex items-center gap-1.5" id="star-rating-container">
+<button class="star-btn text-[28px] text-tertiary-fixed hover:text-tertiary-fixed-dim transition-transform transform hover:scale-110 focus:outline-none" onclick="setRating(1)" type="button">★</button>
+<button class="star-btn text-[28px] text-tertiary-fixed hover:text-tertiary-fixed-dim transition-transform transform hover:scale-110 focus:outline-none" onclick="setRating(2)" type="button">★</button>
+<button class="star-btn text-[28px] text-tertiary-fixed hover:text-tertiary-fixed-dim transition-transform transform hover:scale-110 focus:outline-none" onclick="setRating(3)" type="button">★</button>
+<button class="star-btn text-[28px] text-tertiary-fixed hover:text-tertiary-fixed-dim transition-transform transform hover:scale-110 focus:outline-none" onclick="setRating(4)" type="button">★</button>
+<button class="star-btn text-[28px] text-tertiary-fixed-dim hover:text-tertiary-fixed-dim transition-transform transform hover:scale-110 focus:outline-none" onclick="setRating(5)" type="button">★</button>
+<span class="font-label-sm text-label-sm text-primary-container font-bold ml-2" id="rating-label">Excelente (5/5)</span>
+</div>
+</div>
+<!-- Select Hospital / Universidad -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-primary-container font-semibold" for="feedback-center">
+              Hospital o Universidad de Origen
+            </label>
+<div class="relative">
+<select class="w-full px-3 py-2.5 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface focus:outline-none appearance-none" id="feedback-center">
+<option value="rebagliati">Hosp. Nacional Edgardo Rebagliati Martins</option>
+<option value="loayza">Hosp. Nacional Arzobispo Loayza</option>
+<option value="almenara">Hosp. Nacional Guillermo Almenara Irigoyen</option>
+<option value="dosdemayo">Hosp. Nacional Dos de Mayo</option>
+<option value="inr">Instituto Nacional de Salud del Niño (Breña / San Borja)</option>
+<option value="unmsm">Universidad Nacional Mayor de San Marcos (UNMSM)</option>
+<option value="cayetano">Universidad Peruana Cayetano Heredia (UPCH)</option>
+<option value="upc">Universidad Peruana de Ciencias Aplicadas (UPC)</option>
+<option value="otro">Otro Centro Asistencial / Universitario</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Textarea -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-primary-container font-semibold" for="feedback-text">
+              Tu Mensaje o Sugerencia
+            </label>
+<textarea class="w-full p-3 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none transition-all" id="feedback-text" placeholder="Comparte tu experiencia de guardia o cuéntanos qué accesorio necesitas (ej. bolsillos específicos para saturómetro, tabla de diluciones pediátricas)..." rows="4"></textarea>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-3 px-6 rounded-xl bg-primary-container text-on-primary font-headline-sm text-body-md font-bold flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-sm" onclick="submitFeedback()" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Enviar Comentario a la Comunidad</span>
+</button>
+<div class="hidden p-3 bg-secondary-fixed text-on-secondary-fixed-variant rounded-lg font-body-sm text-body-sm text-center" id="feedback-alert">
+            ¡Muchas gracias por tu aporte! Ha sido registrado para nuestro equipo de diseño clínico.
+          </div>
+</div>
+<!-- Verified Community Cards (2 Peer Recommendations) -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">
+              Experiencias de Guardia Recientes
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Verificados 2024-2025</span>
+</div>
+<!-- Card 1: Interno Loayza -->
+<div class="p-space-lg bg-surface-container-low rounded-xl shadow-sm flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-secondary-fixed-dim text-primary-container flex items-center justify-center font-bold text-headline-sm">
+                  DR
+                </div>
+<div>
+<div class="font-headline-sm text-body-lg font-bold text-primary-container leading-none">
+                    Diego Ramos Castro
+                  </div>
+<div class="mt-1 flex items-center gap-1.5 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-primary-container font-label-sm text-label-sm font-semibold">
+                      Interno Medicina - Loayza
+                    </span>
+<span class="text-secondary text-[12px] font-label-md">San Marcos 2024</span>
+</div>
+</div>
+</div>
+<!-- 5 Stars in Soft Heart Pink -->
+<div class="flex text-tertiary-fixed text-[18px]">
+                ★★★★★
+              </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed">
+              "La guía de bolsillo me salvó en mi segunda guardia en Emergencia Médica del Loayza: las tablas de infusión continua de noradrenalina y el resumen de antibióticos vienen exactamente al grano. Además, las filipinas stretch aguantan el calor de los pabellones antiguos sin empaparse."
+            </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+                Compra Verificada: Kit Interno Full Ultra-Flex
+              </span>
+<span>Hace 3 días</span>
+</div>
+</div>
+<!-- Card 2: Residente Hosp. del Niño -->
+<div class="p-space-lg bg-surface-container-low rounded-xl shadow-sm flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-tertiary-fixed text-primary-container flex items-center justify-center font-bold text-headline-sm">
+                  CP
+                </div>
+<div>
+<div class="font-headline-sm text-body-lg font-bold text-primary-container leading-none">
+                    Dra. Camila Paredes
+                  </div>
+<div class="mt-1 flex items-center gap-1.5 flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-primary-container font-label-sm text-label-sm font-semibold">
+                      Residente Pediatría - Hosp. del Niño
+                    </span>
+<span class="text-secondary text-[12px] font-label-md">Cayetano 2023</span>
+</div>
+</div>
+</div>
+<!-- 5 Stars in Soft Heart Pink -->
+<div class="flex text-tertiary-fixed text-[18px]">
+                ★★★★★
+              </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed">
+              "En pediatría nos lavamos las manos 60 veces al día y cargamos con linterna, oxímetro y vademécum. Los 7 bolsillos de la filipina y el pantalón jogger son los más resistentes que he tenido. El bordado con el logo institucional quedó impecable."
+            </p>
+<div class="pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+                Compra Verificada: Scrub Antimicrobiano Rosa Pastel
+              </span>
+<span>Hace 1 semana</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Community Callout Strip -->
+<div class="w-full bg-surface-container-high py-space-md">
+<div class="max-w-7xl mx-auto px-margin flex flex-col sm:flex-row items-center justify-between gap-space-md text-center sm:text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[24px] text-primary-container">groups</span>
+<div>
+<span class="font-label-lg text-label-lg font-bold text-primary-container">¿Quieres organizar un pedido grupal para tu promoción o internado?</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ofrecemos descuentos corporativos desde 6 unidades y bordados gratis para promociones hospitalarias.</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-lowest text-primary-container font-label-lg text-label-lg font-bold shadow-sm hover:bg-secondary-fixed transition-colors" href="https://wa.me/51987654321" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Cotizar Promoción por WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+<script>
+  function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('.material-symbols-outlined');
+    const isHidden = content.classList.contains('hidden');
+    
+    // Close other FAQ items
+    document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('.faq-item .material-symbols-outlined').forEach(i => i.style.transform = 'rotate(0deg)');
+
+    if (isHidden) {
+      content.classList.remove('hidden');
+      if (icon) icon.style.transform = 'rotate(180deg)';
+    } else {
+      content.classList.add('hidden');
+      if (icon) icon.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function handleFormSubmit() {
+    const form = document.getElementById('guide-form');
+    const successMsg = document.getElementById('form-success');
+    if (form && successMsg) {
+      form.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+      successMsg.classList.add('flex');
+    }
+  }
+
+  let selectedRating = 5;
+  function setRating(rating) {
+    selectedRating = rating;
+    const stars = document.querySelectorAll('.star-btn');
+    const labels = ["", "Regular (1/5)", "Aceptable (2/5)", "Bueno (3/5)", "Muy Bueno (4/5)", "Excelente (5/5)"];
+    
+    stars.forEach((star, index) => {
+      if (index < rating) {
+        star.classList.remove('text-surface-variant');
+        star.classList.add('text-tertiary-fixed-dim');
+      } else {
+        star.classList.remove('text-tertiary-fixed-dim');
+        star.classList.add('text-surface-variant');
+      }
+    });
+
+    const labelElem = document.getElementById('rating-label');
+    if (labelElem && labels[rating]) {
+      labelElem.innerText = labels[rating];
+    }
+  }
+
+  function submitFeedback() {
+    const text = document.getElementById('feedback-text');
+    const alertBox = document.getElementById('feedback-alert');
+    if (text && alertBox) {
+      if (text.value.trim().length === 0) {
+        text.focus();
+        return;
+      }
+      alertBox.classList.remove('hidden');
+      text.value = '';
+      setTimeout(() => {
+        alertBox.classList.add('hidden');
+      }, 5000);
+    }
+  }
+</script>
+</main>
+<footer class="w-full bg-primary-container text-on-primary py-space-xl border-t border-primary">
+<div class="max-w-7xl mx-auto px-margin flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">Shop &amp; Care</span>
+<p class="font-body-sm text-body-sm text-on-primary-container">Equipamiento clínico de precisión, confección peruana y soporte profesional.</p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-lg font-label-md text-label-md text-on-primary-container">
+<a class="hover:text-on-primary transition-colors" data-path="catalogo" href="#">Catálogo Médico</a>
+<a class="hover:text-on-primary transition-colors" data-path="arma-tu-kit" href="#">Arma tu Kit</a>
+<a class="hover:text-on-primary transition-colors" data-path="terminos" href="#">Términos y Condiciones</a>
+<a class="hover:text-on-primary transition-colors" data-path="soporte" href="#">Soporte Clínico</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-primary-container text-center md:text-right">
+      © 2025 Shop &amp; Care Perú. Todos los derechos reservados.
+    </div>
+</div>
+</footer>
+</body></html>

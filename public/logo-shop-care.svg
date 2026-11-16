@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 70" width="340" height="70" fill="none">
+  <!-- Medical Shield / Heart Icon -->
+  <rect x="5" y="5" width="60" height="60" rx="16" fill="#0D3365" />
+  <!-- Stylized Heart and Plus -->
+  <path d="M35 18 C28 14 18 22 22 31 C25 38 35 48 35 48 C35 48 45 38 48 31 C52 22 42 14 35 18 Z" fill="#EFAEBF" opacity="0.9" />
+  <path d="M35 24 V38 M28 31 H42" stroke="#0D3365" stroke-width="3" stroke-linecap="round" />
+  <circle cx="48" cy="22" r="5" fill="#9CCBEF" />
+  
+  <!-- Brand Typography -->
+  <text x="78" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="800" fill="#0D3365" letter-spacing="-0.5">
+    Shop<tspan fill="#9CCBEF">&amp;</tspan>Care
+  </text>
+  <text x="80" y="54" font-family="'Inter', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#5A6E85" letter-spacing="0.2">
+    UNIFORMES MÉDICOS &amp; INSTRUMENTAL
+  </text>
+</svg>

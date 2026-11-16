@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "background": "#f6fafe",
+        "on-secondary-fixed-variant": "#154b6a",
+        "inverse-surface": "#2c3134",
+        "surface-container-low": "#f0f4f8",
+        "on-primary-container": "#7e9dd5",
+        "outline": "#747780",
+        "on-surface-variant": "#43474f",
+        "primary-fixed": "#d7e3ff",
+        "surface-container-high": "#e4e9ed",
+        "tertiary": "#39111f",
+        "error": "#ba1a1a",
+        "surface-variant": "#dfe3e7",
+        "primary-fixed-dim": "#aac7ff",
+        "on-primary-fixed": "#001b3e",
+        "on-secondary": "#ffffff",
+        "on-tertiary-fixed-variant": "#683847",
+        "on-primary": "#ffffff",
+        "secondary-container": "#abdaff",
+        "surface-bright": "#f6fafe",
+        "tertiary-container": "#522634",
+        "surface-container": "#eaeef2",
+        "error-container": "#ffdad6",
+        "on-error": "#ffffff",
+        "on-tertiary": "#ffffff",
+        "on-secondary-fixed": "#001e2f",
+        "outline-variant": "#c4c6d1",
+        "inverse-on-surface": "#edf1f5",
+        "primary": "#001e44",
+        "surface": "#f6fafe",
+        "tertiary-fixed-dim": "#f6b5c6",
+        "surface-dim": "#d6dade",
+        "tertiary-fixed": "#ffd9e1",
+        "surface-container-highest": "#dfe3e7",
+        "on-tertiary-container": "#c88c9c",
+        "primary-container": "#0d3365",
+        "secondary": "#336383",
+        "secondary-fixed-dim": "#9dccf0",
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-fixed": "#340e1c",
+        "on-primary-fixed-variant": "#264679",
+        "on-surface": "#171c1f",
+        "secondary-fixed": "#c9e6ff",
+        "surface-tint": "#405e93",
+        "on-background": "#171c1f",
+        "on-secondary-container": "#2f6080",
+        "inverse-primary": "#aac7ff",
+        "on-error-container": "#93000a"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "space-sm": "0.5rem",
+        "gutter": "1.5rem",
+        "margin-mobile": "1rem",
+        "gutter-mobile": "0.75rem",
+        "space-xl": "2.5rem",
+        "space-xs": "0.25rem",
+        "margin": "2rem"
+      },
+      "fontFamily": {
+        "headline-md": ["Plus Jakarta Sans"],
+        "label-lg": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "body-lg": ["Inter"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "headline-xl": ["Plus Jakarta Sans"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "body-md": ["Inter"],
+        "headline-xl-mobile": ["Plus Jakarta Sans"],
+        "body-sm": ["Inter"],
+        "headline-lg": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "headline-xl-mobile": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700"}]
+      }
+    }
+  }
+};
+</script>
+</head>
+<body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface">
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container-high">
+<div class="w-full bg-primary-container text-on-primary py-1 px-margin text-center font-label-sm text-label-sm tracking-wide flex items-center justify-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-[15px] text-secondary-fixed-dim">local_shipping</span>
+<span>Envíos en 24h a Hospitales de Lima Metropolitana (Rebagliati, Almenara, Loayza, Dos de Mayo)</span>
+<span class="opacity-40 mx-space-xs">|</span>
+<span class="font-bold text-tertiary-fixed">CAMPAÑA INTERNADO 2025:</span>
+<span>15% DTO en kits completos</span>
+</div>
+<div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center justify-center w-10 h-10 rounded-xl bg-surface-container-low text-primary shadow-sm border border-surface-container-high relative">
+<span class="material-symbols-outlined text-[24px] text-primary-container">stethoscope</span>
+<span class="material-symbols-outlined text-[12px] text-tertiary-fixed-dim absolute -top-1 -right-1">favorite</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary-container tracking-tight leading-none">Shop &amp; Care</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal mt-0.5">Uniformes médicos, accesorios y más</span>
+</div>
+</div>
+<nav class="hidden lg:flex items-center bg-surface-container-low p-1.5 rounded-lg border border-surface-container-high gap-1" data-active-classes="bg-secondary-fixed-dim text-primary-container font-bold rounded-lg shadow-sm">
+<a class="font-label-lg text-label-lg px-4 py-2 rounded-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="inicio" href="#">Inicio</a>
+<a class="font-label-lg text-label-lg px-4 py-2 rounded-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="catalogo" href="#">Catálogo</a>
+<a aria-current="page" class="px-4 py-2 transition-colors bg-secondary-fixed-dim text-primary-container font-bold rounded-lg shadow-sm" data-path="arma-tu-kit" href="#">Arma tu Kit</a>
+<a class="font-label-lg text-label-lg px-4 py-2 rounded-lg text-on-surface-variant hover:text-primary-container transition-colors" data-path="guia-y-comunidad" href="#">Guía y Comunidad</a>
+</nav>
+<div class="flex items-center gap-space-md">
+<a class="inline-flex items-center gap-space-xs bg-tertiary-fixed text-primary-container font-label-lg text-label-lg px-space-md py-2.5 rounded-full hover:bg-tertiary-fixed-dim transition-colors shadow-[0_2px_8px_-2px_rgba(13,51,101,0.08)]" data-path="guia-y-comunidad" href="#">
+<span class="material-symbols-outlined text-[18px]">featured_seasonal_and_gifts</span>
+<span>Guía Gratis + 15% DTO</span>
+</a>
+<div class="flex items-center gap-space-xs pl-space-xs">
+<img alt="Doctor Avatar" class="w-9 h-9 rounded-full object-cover ring-2 ring-secondary-fixed shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWoaciru_fMiZBbrSNKMC4EUdDVrgiHlBgckY_fFlLiJZtvUFpL__5MVcp9sCLB1VDvrsASc7teZ6hvEWyjrfLbShTPfA8KxI2rbGg3rvYde8bBpnuHP_hwm6fdT5xyMgSFuQ0NIM7Jcbe4V5DywOZmKIoZW9R6dYzqNz6JetoDXSRH1Z0NI1so2JTW6NlFRTVJ8nWyP51Q_orgxBbr5ZXqS04T51NJesNnLqxftzM"/>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-28 bg-surface-container-lowest min-h-[calc(100vh-140px)]">
+<div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-margin py-space-lg flex flex-col gap-space-lg">
+<!-- Top Announcement & Header Section -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-surface-container-low via-surface-bright to-secondary-fixed/30 p-space-lg shadow-sm">
+<div class="relative z-10 flex flex-col gap-space-sm max-w-3xl">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-secondary-fixed text-primary-container font-label-sm text-label-sm w-fit shadow-sm">
+<span class="material-symbols-outlined text-[15px] animate-pulse">ecg_heart</span>
+<span class="tracking-wider uppercase">Configurador Clínico Personalizado 2025</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-container tracking-tight">
+          Arma tu Kit para Internado o Externado
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Selecciona tu perfil médico y personaliza tu equipamiento con descuento automático para estudiantes y residentes peruanos.
+        </p>
+</div>
+<div class="absolute -right-8 -bottom-10 opacity-10 pointer-events-none text-primary">
+<span class="material-symbols-outlined text-[240px]">medical_services</span>
+</div>
+</div>
+<!-- Main Two-Column Interactive Builder -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Interactive Configuration Steps (7 cols on desktop ~ 60%) -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- Step 1: Especialidad / Carrera -->
+<section class="flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center">1</span>
+<h2 class="font-headline-sm text-headline-sm text-primary-container">Carrera &amp; Especialidad</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Paso Obligatorio</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm" id="career-selector">
+<button class="career-btn px-space-md py-2.5 rounded-lg text-center font-label-lg text-label-lg transition-all bg-secondary-fixed text-primary-container font-bold shadow-sm" data-career="Medicina Humana" type="button">
+              Medicina Humana
+            </button>
+<button class="career-btn px-space-md py-2.5 rounded-lg text-center font-label-lg text-label-lg transition-all bg-surface-container-low text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary-container" data-career="Enfermería" type="button">
+              Enfermería
+            </button>
+<button class="career-btn px-space-md py-2.5 rounded-lg text-center font-label-lg text-label-lg transition-all bg-surface-container-low text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary-container" data-career="Tecnología Médica" type="button">
+              Tecnología Médica
+            </button>
+<button class="career-btn px-space-md py-2.5 rounded-lg text-center font-label-lg text-label-lg transition-all bg-surface-container-low text-on-surface-variant hover:bg-secondary-fixed/50 hover:text-primary-container" data-career="Obstetricia" type="button">
+              Obstetricia
+            </button>
+</div>
+</section>
+<!-- Step 2: Sede / Tipo de Hospital -->
+<section class="flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center">2</span>
+<h2 class="font-headline-sm text-headline-sm text-primary-container">Sede Hospitalaria de Rotación</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Protocolo de Uniforme</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-space-sm" id="hospital-selector">
+<button class="hospital-btn flex-1 p-space-md rounded-lg text-left transition-all bg-secondary-fixed text-primary-container font-bold shadow-sm" data-hosp-detail="MINSA (Loayza, Dos de Mayo, Cayetano)" data-hospital="Sede MINSA" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg">MINSA</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-normal mt-1">Loayza, Dos de Mayo, Cayetano</p>
+</button>
+<button class="hospital-btn flex-1 p-space-md rounded-lg text-left transition-all bg-surface-container-low text-on-surface-variant hover:bg-secondary-fixed/50" data-hosp-detail="EsSalud (Rebagliati, Almenara)" data-hospital="Sede EsSalud" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg">EsSalud</span>
+<span class="material-symbols-outlined text-[18px] opacity-40">apartment</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Rebagliati, Almenara, Sabogal</p>
+</button>
+<button class="hospital-btn flex-1 p-space-md rounded-lg text-left transition-all bg-surface-container-low text-on-surface-variant hover:bg-secondary-fixed/50" data-hosp-detail="Clínica Privada / Seguro" data-hospital="Sede Privada" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg">Clínica Privada</span>
+<span class="material-symbols-outlined text-[18px] opacity-40">local_hospital</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Anglo Americana, San Pablo, etc.</p>
+</button>
+</div>
+</section>
+<!-- Step 3: Indumentaria Clínica -->
+<section class="flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center">3</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary-container">Indumentaria Clínica Certificada</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Confección nacional con tecnología antifluido y antimicrobial</p>
+</div>
+</div>
+<span class="hidden sm:inline-flex px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">3 Opciones</span>
+</div>
+<div class="flex flex-col gap-space-md" id="garments-list">
+<!-- Item 1: Scrub Oriana / Carlos -->
+<label class="kit-item group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-surface-bright hover:bg-surface-container-low transition-all shadow-sm cursor-pointer" data-id="scrub" data-name="Scrub Clínico (Filipina + Jogger)" data-price="135">
+<div class="flex items-start gap-space-md w-full md:w-auto">
+<div class="pt-1">
+<input checked="" class="kit-checkbox w-5 h-5 rounded text-primary-container focus:ring-secondary-fixed accent-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="High quality Peruvian navy blue medical scrub suit laid neatly on clinical surface with stretch fabric texture in soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFzPpbJyhD9jEvDinPQ7vAbEy4MxP8FrbD1B1M71vvcr-n1U-KgcMcymGMhAb57IvVf0jlxsT2bhlS4-uV4CKscmj4PF4QnAgVr7AG3zYuvm1NqrHiz_VV62eaAIr9JGTG0HxdmKU_FGGc_7qZxE4IAxfzytCkj76hTOsE8kLA4Hmi2oGPdfi-o_WEq8CuUgos0tUtypENHKhfTpetr2HCbkxh3H-_sD_kQJuS5c7_"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg text-primary-container font-bold">Scrub Clínico Antifluido Oriana / Carlos</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-primary-container font-label-sm text-label-sm">Filipina + Jogger</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+                    6 bolsillos de guardia, tejido stretch 4-way, antifluidos. Talla: M | Color: Navy Hospitalario.
+                  </p>
+<div class="flex items-center gap-space-sm mt-1.5 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">water_drop</span> Antifluido</span>
+<span>•</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">autorenew</span> 4-Way Stretch</span>
+</div>
+</div>
+</div>
+<div class="mt-3 md:mt-0 flex md:flex-col items-baseline md:items-end justify-between w-full md:w-auto pl-10 md:pl-0 shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">S/ 135.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Precio unitario</span>
+</div>
+</label>
+<!-- Item 2: Casaca Micropolar -->
+<label class="kit-item group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-surface-bright hover:bg-surface-container-low transition-all shadow-sm cursor-pointer" data-id="casaca" data-name="Casaca Micropolar Térmica" data-price="119">
+<div class="flex items-start gap-space-md w-full md:w-auto">
+<div class="pt-1">
+<input checked="" class="kit-checkbox w-5 h-5 rounded text-primary-container focus:ring-secondary-fixed accent-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Navy blue clinical thermal microfleece jacket designed for hospital night shifts on clean white studio backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWLM7QmSj54PC_9xdp9LBSIV95dXwqnx6C1nq3ulVq-20wEJAWiodwjV0uXXrrMz76qA8bQ_QOTjwa9QwR2q8zUT2GfwXC7f_Xk01XHWmxUx-ChNLDFAexGxkrMjjbeyWltU1Hc2r6dXAH1niGtsVyAXG586yukEhMrgxGou5YbuMDn9t2ymZmSqBa5yj6He3df5EMe2Mf_LUjMDeTk7C-TwWJukS-Y6hO6WLZxyT4"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg text-primary-container font-bold">Casaca Micropolar Térmica para Guardia</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-primary-container font-label-sm text-label-sm">Nocturna</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+                    Capa ultraligera térmica con espacio para bordado institucional. Talla: M | Color: Deep Navy.
+                  </p>
+<div class="flex items-center gap-space-sm mt-1.5 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">ac_unit</span> Protección Frío</span>
+<span>•</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">verified</span> Bordado Gratis</span>
+</div>
+</div>
+</div>
+<div class="mt-3 md:mt-0 flex md:flex-col items-baseline md:items-end justify-between w-full md:w-auto pl-10 md:pl-0 shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">S/ 119.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Precio unitario</span>
+</div>
+</label>
+<!-- Item 3: Guardapolvo Clínico Alondra -->
+<label class="kit-item group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low transition-all shadow-sm cursor-pointer opacity-80" data-id="guardapolvo" data-name="Guardapolvo Clínico Alondra" data-price="129">
+<div class="flex items-start gap-space-md w-full md:w-auto">
+<div class="pt-1">
+<input class="kit-checkbox w-5 h-5 rounded text-primary-container focus:ring-secondary-fixed accent-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Pristine white medical lab coat with mandarin collar tailored for hospital rounds shot in sharp professional clinic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDohd-LAc3rX7HoGjjBmFDAFcDhUxheogVb6tQA3qiZGygG3IcgGijSyeufUIpp2JJTBHmaddpkCbsPLKve6Cp8rlK6wnYaDxmVzwSzGnl8uavQW1fYdNmOooF7ANv1ZcP88IM1z1rs4EUw9wcPhSbTUV5hNon1haaBiZtLpM5CH68cOUjMR9NEpq8hWmSZFjEn4qG2kJfHlcNYj3wTDYBVdewpVu3bJKvrKEHkRaOo"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg text-primary-container font-bold">Guardapolvo Clínico Alondra (Cuello Mao)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm">Visita Médica</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+                    Tela clororresistente antiarrugas para pase de visita y auditorio hospitalario.
+                  </p>
+<div class="flex items-center gap-space-sm mt-1.5 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">iron</span> Antiarrugas</span>
+</div>
+</div>
+</div>
+<div class="mt-3 md:mt-0 flex md:flex-col items-baseline md:items-end justify-between w-full md:w-auto pl-10 md:pl-0 shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">S/ 129.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Opcional</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Step 4: Instrumental & Diagnóstico Quirúrgico -->
+<section class="flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center">4</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary-container">Instrumental &amp; Diagnóstico de Precisión</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Herramientas avaladas para triaje, procedimientos de emergencia y piso</p>
+</div>
+</div>
+<span class="hidden sm:inline-flex px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">4 Opciones</span>
+</div>
+<div class="flex flex-col gap-space-md" id="instruments-list">
+<!-- Item 4: Set Instrumental -->
+<label class="kit-item group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-surface-bright hover:bg-surface-container-low transition-all shadow-sm cursor-pointer" data-id="instrumental" data-name="Set Instrumental Cirugía Menor (8 pcs)" data-price="75">
+<div class="flex items-start gap-space-md w-full md:w-auto">
+<div class="pt-1">
+<input checked="" class="kit-checkbox w-5 h-5 rounded text-primary-container focus:ring-secondary-fixed accent-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="High quality surgical steel minor surgery set with scissors, forceps, and scalpel in an open padded protective case" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbGaFxPlokkWHYlrcPf5kUNCJSdMwOaXQmgMkg1Xqgu4P_6AG_jhYWiLi9vcySaiSQ6EkJAoyS9PwBc2UAdg258VP5rcQ54aY6BhWO_4bGoo-j4LWkKEpbQswLvYNdVuWOy5AuLa4T2Kkl94eStqBrbaOF5DobHbWXUsQw67sjEUEfpV9dS-vetzXtpESVo0sIvMQInebOwEy96G1s8a0z4YjLeQRKY4_eDuPJS2Dj"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg text-primary-container font-bold">Set Instrumental Cirugía Menor (8 piezas)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-primary-container font-label-sm text-label-sm">Acero Quirúrgico</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+                    Estuche acolchado antiimpacto, tijera Mayo recta, pinzas con/sin uña y mango #3.
+                  </p>
+<div class="flex items-center gap-space-sm mt-1.5 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">shield</span> Acero Alemán 420</span>
+</div>
+</div>
+</div>
+<div class="mt-3 md:mt-0 flex md:flex-col items-baseline md:items-end justify-between w-full md:w-auto pl-10 md:pl-0 shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">S/ 75.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Precio unitario</span>
+</div>
+</label>
+<!-- Item 5: Estetoscopio Clínico -->
+<label class="kit-item group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-surface-bright hover:bg-surface-container-low transition-all shadow-sm cursor-pointer" data-id="estetoscopio" data-name="Estetoscopio Clínico Doble Campana" data-price="219">
+<div class="flex items-start gap-space-md w-full md:w-auto">
+<div class="pt-1">
+<input checked="" class="kit-checkbox w-5 h-5 rounded text-primary-container focus:ring-secondary-fixed accent-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="High precision acoustic dual head medical stethoscope with deep blue tubing and brushed metal chestpiece on clean surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoIBLMBg43lRtJXKtw1uOLUkKNsAChT9dQOB3ECeXOdMHMmZDr2nMTni9LAa0-Rl5i6IuOG9wjTHaoeYiZGZiMi4jOolIJI2gYY4zVbpL-qKgnDxsp91DHOBde1eKDYavqx-gfRvkpDycxMXcvhh-2b0gonFG1KJaEngDio3nm3Qqtz9_U113oKlFOzAtstYkFyo6vf69oOFcWXGj32AcC09soue2aHmVConwOs7Je"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg text-primary-container font-bold">Estetoscopio Clínico Doble Campana Acústica</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-primary-container font-label-sm text-label-sm">Alta Fidelidad</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+                    Olivas anatómicas suaves selladas, campana reversible pediátrica/adulto de alto rendimiento.
+                  </p>
+<div class="flex items-center gap-space-sm mt-1.5 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">hearing</span> Acústica 9/10</span>
+</div>
+</div>
+</div>
+<div class="mt-3 md:mt-0 flex md:flex-col items-baseline md:items-end justify-between w-full md:w-auto pl-10 md:pl-0 shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">S/ 219.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Precio unitario</span>
+</div>
+</label>
+<!-- Item 6: Canguro Organizador -->
+<label class="kit-item group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low transition-all shadow-sm cursor-pointer opacity-80" data-id="canguro" data-name="Canguro Organizador de Guardia" data-price="65">
+<div class="flex items-start gap-space-md w-full md:w-auto">
+<div class="pt-1">
+<input class="kit-checkbox w-5 h-5 rounded text-primary-container focus:ring-secondary-fixed accent-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Tactical navy blue clinical waist pack organizer for hospital nurses and interns with organized medical equipment slots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbgECkFzMHfLl92H8GCY4kk2OSCOIlR8RwrDNj1WlNBOKFqVh8ZJcJbQG8_0yYuQZoMyJEgFtWNgbgnW88WYO3J7_vZumv3eI_iHh-HsUJ3Dn87NX4-QdQTWxGDTXSU6lRaIrti3K3KeEHw6_NA1f1c12nuFIBUeyBnKAWcC4htLiCnRuR3ew408i2CFTR9ArGQcJWsq9Wlx8IVMmvp1F9sZTM7Bt-94vP95ot2aDx"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg text-primary-container font-bold">Canguro Organizador de Guardia Rápida</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm">Ergonómico</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+                    Compartimentos dedicados para linterna, torniquete, sello automático y tijera de botón.
+                  </p>
+<div class="flex items-center gap-space-sm mt-1.5 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">backpack</span> Impermeable</span>
+</div>
+</div>
+</div>
+<div class="mt-3 md:mt-0 flex md:flex-col items-baseline md:items-end justify-between w-full md:w-auto pl-10 md:pl-0 shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">S/ 65.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Opcional</span>
+</div>
+</label>
+<!-- Item 7: Linterna Médica Pupilar -->
+<label class="kit-item group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-surface-bright hover:bg-surface-container-low transition-all shadow-sm cursor-pointer" data-id="linterna" data-name="Linterna Médica Pupilar LED + Cinta" data-price="25">
+<div class="flex items-start gap-space-md w-full md:w-auto">
+<div class="pt-1">
+<input checked="" class="kit-checkbox w-5 h-5 rounded text-primary-container focus:ring-secondary-fixed accent-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Aluminum medical diagnostic penlight for neurological pupil reflex test and cephalic tape measure in clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYryyPsdDMfo2kPSVc8oNkGlGTyqh290d8FPG4g7hpOrgexjJUPX2MSd-EsYLIaJW3wkJ2W_ZvnuXEjSEKqsaMXM2xeVp8yWheQD-R9iV-ecz8nSE9GAoRA4b5LKnfyWMCs1SLDMJNH0fuuTd2advGqo4BeJDcvYt_AwSPIuOqMW82yWSqrjQfT0Qa3IMzmscvakWo3Amcc3gUAyeCSEHOyGPYvPAFtsbYCSQ6iUsk"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-lg text-label-lg text-primary-container font-bold">Linterna Médica Pupilar LED + Cinta Métrica</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-primary-container font-label-sm text-label-sm">Pack Básico</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+                    Luz cálida/neutra especial para evaluación de reflejo fotomotor y cinta cefálica pediátrica.
+                  </p>
+<div class="flex items-center gap-space-sm mt-1.5 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">lightbulb</span> LED Neutro</span>
+</div>
+</div>
+</div>
+<div class="mt-3 md:mt-0 flex md:flex-col items-baseline md:items-end justify-between w-full md:w-auto pl-10 md:pl-0 shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">S/ 25.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Precio unitario</span>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Budget Summary Card (5 cols on desktop ~ 40%) -->
+<aside class="lg:col-span-5 sticky top-24">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-xl border border-secondary-fixed/40 flex flex-col gap-space-md">
+<!-- Summary Header -->
+<div class="flex flex-col gap-space-xs pb-space-sm border-b border-surface-container-high">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Cotizador en Vivo</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-primary-container bg-secondary-fixed-dim/40 px-2 py-0.5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+                Actualizado
+              </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary-container">
+              Resumen de tu Kit
+            </h2>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary-fixed text-primary-container font-bold" id="badge-career">
+                Medicina Humana
+              </span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container-high text-primary-container font-semibold" id="badge-hospital">
+                Sede MINSA
+              </span>
+</div>
+</div>
+<!-- Items Breakdown -->
+<div class="flex flex-col gap-space-xs py-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Artículos Incluidos:</span>
+<div class="flex flex-col gap-2 max-h-52 overflow-y-auto pr-1" id="summary-items-list">
+<!-- Dynamically populated via JS -->
+</div>
+</div>
+<!-- Subtotal & Discount Calculation -->
+<div class="flex flex-col gap-space-xs pt-space-sm border-t border-surface-container-high font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Subtotal regular:</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface" id="summary-subtotal">S/ 573.00</span>
+</div>
+<!-- Automated Coupon Badge -->
+<div class="flex items-center justify-between bg-tertiary-fixed text-on-tertiary-fixed p-2 rounded-lg font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5 font-bold">
+<span class="material-symbols-outlined text-[16px]">local_offer</span>
+<span>Campaña Internado 2025 (-15%)</span>
+</div>
+<span class="font-bold font-label-lg text-label-lg" id="summary-discount">- S/ 85.95</span>
+</div>
+<!-- Hospital Shipping Benefit -->
+<div class="flex items-start gap-2 bg-secondary-fixed/30 p-2 rounded-lg text-primary-container mt-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">location_on</span>
+<span class="font-normal text-[13px] leading-tight">
+<strong>Envío Gratis:</strong> Entrega prioritaria en 24h a sedes hospitalarias de Lima (Rebagliati, Loayza, Almenara, Dos de Mayo).
+              </span>
+</div>
+</div>
+<!-- Final Grand Total Block -->
+<div class="p-space-md rounded-xl bg-gradient-to-br from-surface-container-low to-secondary-fixed/20 flex flex-col gap-1">
+<div class="flex items-baseline justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Total a Pagar:</span>
+<span class="line-through font-label-md text-label-md text-on-surface-variant opacity-60" id="summary-strike-total">S/ 573.00</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight" id="summary-final-total">
+                S/ 487.05
+              </span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary bg-tertiary-fixed/60 px-2 py-0.5 rounded">
+                ¡Ahorras S/ <span id="summary-savings">85.95</span>!
+              </span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant italic mt-1">Precios incluyen IGV. Comprobante de pago emitido automáticamente.</p>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<a class="w-full py-3.5 px-space-md rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 hover:bg-primary shadow-md hover:shadow-lg transition-all group" href="#" id="btn-whatsapp">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed group-hover:scale-110 transition-transform">chat</span>
+<span>Cotizar Kit por WhatsApp</span>
+</a>
+<button class="w-full py-2.5 px-space-md rounded-xl bg-transparent border-2 border-secondary-fixed-dim text-primary-container font-label-lg text-label-lg font-bold hover:bg-secondary-fixed/30 transition-colors flex items-center justify-center gap-2" id="btn-save-kit" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+<span>Guardar configuración de Kit</span>
+</button>
+</div>
+<!-- Trust Badges -->
+<div class="grid grid-cols-3 gap-2 pt-space-sm border-t border-surface-container-high text-center">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary-container">verified_user</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant leading-tight">Garantía 12 meses</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary-container">published_with_changes</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant leading-tight">Cambio de talla gratis</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary-container">format_quote</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant leading-tight">Bordado institucional</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Additional Hospital Support Banner / FAQ Footnote -->
+<div class="mt-space-lg p-space-lg rounded-xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[26px]">groups</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary-container">¿Compras para toda tu promoción o sede?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Ofrecemos descuentos corporativos adicionales desde 10 unidades, visitas de prueba de tallas a tu universidad y bordado gratis para promociones.
+          </p>
+</div>
+</div>
+<a class="px-space-lg py-2.5 rounded-lg bg-surface-container-lowest text-primary-container font-label-lg text-label-lg font-bold shadow-sm hover:bg-secondary-fixed transition-colors whitespace-nowrap" href="#">
+        Contactar Asesor Grupal
+      </a>
+</div>
+</div>
+<!-- Interactive JavaScript logic for dynamic updates -->
+<script>
+    (function() {
+      // Elements
+      const careerBtns = document.querySelectorAll('.career-btn');
+      const hospitalBtns = document.querySelectorAll('.hospital-btn');
+      const kitItems = document.querySelectorAll('.kit-item');
+      const badgeCareer = document.getElementById('badge-career');
+      const badgeHospital = document.getElementById('badge-hospital');
+      const summaryItemsList = document.getElementById('summary-items-list');
+      const summarySubtotal = document.getElementById('summary-subtotal');
+      const summaryDiscount = document.getElementById('summary-discount');
+      const summaryStrikeTotal = document.getElementById('summary-strike-total');
+      const summaryFinalTotal = document.getElementById('summary-final-total');
+      const summarySavings = document.getElementById('summary-savings');
+      const btnWhatsapp = document.getElementById('btn-whatsapp');
+      const btnSaveKit = document.getElementById('btn-save-kit');
+
+      let currentCareer = 'Medicina Humana';
+      let currentHospital = 'Sede MINSA';
+
+      // Handle Career selection
+      careerBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          careerBtns.forEach(b => {
+            b.classList.remove('bg-secondary-fixed', 'text-primary-container', 'font-bold', 'shadow-sm');
+            b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          });
+          btn.classList.add('bg-secondary-fixed', 'text-primary-container', 'font-bold', 'shadow-sm');
+          btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          currentCareer = btn.getAttribute('data-career');
+          badgeCareer.textContent = currentCareer;
+          updateWhatsAppLink();
+        });
+      });
+
+      // Handle Hospital selection
+      hospitalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          hospitalBtns.forEach(b => {
+            b.classList.remove('bg-secondary-fixed', 'text-primary-container', 'font-bold', 'shadow-sm');
+            b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          });
+          btn.classList.add('bg-secondary-fixed', 'text-primary-container', 'font-bold', 'shadow-sm');
+          btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          currentHospital = btn.getAttribute('data-hospital');
+          badgeHospital.textContent = currentHospital;
+          updateWhatsAppLink();
+        });
+      });
+
+      // Handle Kit Items check/uncheck
+      kitItems.forEach(item => {
+        const checkbox = item.querySelector('.kit-checkbox');
+        
+        checkbox.addEventListener('change', () => {
+          syncCardStyle(item, checkbox.checked);
+          recalculate();
+        });
+
+        // Sync initial card state
+        syncCardStyle(item, checkbox.checked);
+      });
+
+      function syncCardStyle(item, isChecked) {
+        if (isChecked) {
+          item.classList.remove('bg-surface-container-low/60', 'opacity-80');
+          item.classList.add('bg-surface-bright', 'opacity-100');
+        } else {
+          item.classList.remove('bg-surface-bright', 'opacity-100');
+          item.classList.add('bg-surface-container-low/60', 'opacity-80');
+        }
+      }
+
+      function recalculate() {
+        let subtotal = 0;
+        let selectedList = [];
+
+        kitItems.forEach(item => {
+          const checkbox = item.querySelector('.kit-checkbox');
+          if (checkbox.checked) {
+            const name = item.getAttribute('data-name');
+            const price = parseFloat(item.getAttribute('data-price'));
+            subtotal += price;
+            selectedList.push({ name, price });
+          }
+        });
+
+        // Discount 15%
+        const discountRate = 0.15;
+        const discountAmount = subtotal * discountRate;
+        const finalTotal = subtotal - discountAmount;
+
+        // Render summary items
+        summaryItemsList.innerHTML = '';
+        if (selectedList.length === 0) {
+          summaryItemsList.innerHTML = '<span class="text-on-surface-variant italic font-body-sm">No has seleccionado ningún artículo aún.</span>';
+        } else {
+          selectedList.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'flex items-center justify-between text-on-surface font-body-sm py-0.5';
+            div.innerHTML = `
+              <span class="truncate pr-2 font-medium flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px] text-secondary">check</span>
+                ${item.name}
+              </span>
+              <span class="shrink-0 font-semibold font-label-md">S/ ${item.price.toFixed(2)}</span>
+            `;
+            summaryItemsList.appendChild(div);
+          });
+        }
+
+        // Update displays
+        summarySubtotal.textContent = `S/ ${subtotal.toFixed(2)}`;
+        summaryDiscount.textContent = `- S/ ${discountAmount.toFixed(2)}`;
+        summaryStrikeTotal.textContent = `S/ ${subtotal.toFixed(2)}`;
+        summaryFinalTotal.textContent = `S/ ${finalTotal.toFixed(2)}`;
+        summarySavings.textContent = discountAmount.toFixed(2);
+
+        updateWhatsAppLink(selectedList, finalTotal);
+      }
+
+      function updateWhatsAppLink(items = null, total = null) {
+        if (!items) {
+          items = [];
+          kitItems.forEach(i => {
+            if (i.querySelector('.kit-checkbox').checked) {
+              items.push({ name: i.getAttribute('data-name'), price: parseFloat(i.getAttribute('data-price')) });
+            }
+          });
+          const sub = items.reduce((acc, curr) => acc + curr.price, 0);
+          total = sub * 0.85;
+        }
+
+        let message = `¡Hola Shop & Care! Deseo confirmar la cotización de mi Kit:%0A` +
+                      `• Carrera: ${encodeURIComponent(currentCareer)}%0A` +
+                      `• Sede Hospitalaria: ${encodeURIComponent(currentHospital)}%0A` +
+                      `• Artículos seleccionados (${items.length}):%0A`;
+        items.forEach(it => {
+          message += `  - ${encodeURIComponent(it.name)} (S/ ${it.price.toFixed(2)})%0A`;
+        });
+        message += `• Total con 15% DTO Internado: S/ ${total.toFixed(2)}`;
+
+        btnWhatsapp.href = `https://wa.me/51999999999?text=${message}`;
+      }
+
+      // Save kit notification interaction
+      btnSaveKit.addEventListener('click', () => {
+        const originalText = btnSaveKit.innerHTML;
+        btnSaveKit.innerHTML = `<span class="material-symbols-outlined text-[18px] text-primary">done_all</span><span>¡Kit Guardado con Éxito!</span>`;
+        btnSaveKit.classList.add('bg-secondary-fixed');
+        setTimeout(() => {
+          btnSaveKit.innerHTML = originalText;
+          btnSaveKit.classList.remove('bg-secondary-fixed');
+        }, 2200);
+      });
+
+      // Initialize
+      recalculate();
+    })();
+  </script>
+</div>
+</main>
+<footer class="w-full bg-primary-container text-on-primary py-space-xl border-t border-primary">
+<div class="max-w-7xl mx-auto px-margin flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">Shop &amp; Care</span>
+<p class="font-body-sm text-body-sm text-on-primary-container">Equipamiento clínico de precisión, confección peruana y soporte profesional.</p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-lg font-label-md text-label-md text-on-primary-container">
+<a class="hover:text-on-primary transition-colors" data-path="catalogo" href="#">Catálogo Médico</a>
+<a class="hover:text-on-primary transition-colors" data-path="arma-tu-kit" href="#">Arma tu Kit</a>
+<a class="hover:text-on-primary transition-colors" data-path="terminos" href="#">Términos y Condiciones</a>
+<a class="hover:text-on-primary transition-colors" data-path="soporte" href="#">Soporte Clínico</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-primary-container text-center md:text-right">
+      © 2025 Shop &amp; Care Perú. Todos los derechos reservados.
+    </div>
+</div>
+</footer>
+</body></html>
