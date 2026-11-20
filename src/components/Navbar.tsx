@@ -64,7 +64,7 @@ export const Navbar: React.FC = () => {
               Shop &amp; Care
             </span>
             <span className="font-label-sm text-label-sm text-on-surface-variant font-normal mt-0.5">
-              Uniformes médicos, accesorios y más
+              Uniformes médicos, mandiles y accesorios
             </span>
           </div>
         </div>

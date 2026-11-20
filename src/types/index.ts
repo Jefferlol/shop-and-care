@@ -23,6 +23,7 @@ export interface Product {
   precio_normal: number;
   precio_dto: number;
   en_stock: number;
+  imagen?: string;
   descripcion?: string;
   tela?: string;
   detalles: string[];

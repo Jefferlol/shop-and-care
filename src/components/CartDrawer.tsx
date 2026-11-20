@@ -147,12 +147,22 @@ export const CartDrawer: React.FC = () => {
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-start gap-3 min-w-0">
-                        {/* Dot de color */}
-                        <div
-                          className="w-4 h-4 rounded-full border border-black/20 shrink-0 mt-1 shadow-xs"
-                          style={{ backgroundColor: item.color.hex }}
-                          title={item.color.nombre}
-                        />
+                        {/* Thumbnail image with color dot */}
+                        <div className="relative w-12 h-14 rounded-lg bg-surface-container-lowest border border-surface-container-high overflow-hidden shrink-0">
+                          <img
+                            src={item.producto.imagen || `/productos/${item.producto.slug}.jpg`}
+                            alt={item.producto.nombre}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              (e.currentTarget as HTMLImageElement).src = '/Logo.jpeg';
+                            }}
+                          />
+                          <div
+                            className="absolute bottom-1 right-1 w-3 h-3 rounded-full border border-white shadow-xs"
+                            style={{ backgroundColor: item.color.hex }}
+                            title={item.color.nombre}
+                          />
+                        </div>
                         <div className="flex flex-col min-w-0">
                           <span className="font-headline-sm text-body-md font-bold text-primary-container truncate">
                             {item.producto.nombre}

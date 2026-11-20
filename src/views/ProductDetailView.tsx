@@ -18,9 +18,16 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
   const [selectedTalla, setSelectedTalla] = useState<string>(
     product.tallas[0] || 'S'
   );
+  const [activeImage, setActiveImage] = useState<string>(
+    product.imagen || `/productos/${product.slug}.jpg`
+  );
   const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
   const [stockAlertOpen, setStockAlertOpen] = useState(false);
   const [addedMessage, setAddedMessage] = useState(false);
+
+  React.useEffect(() => {
+    setActiveImage(product.imagen || `/productos/${product.slug}.jpg`);
+  }, [product.slug, product.imagen]);
 
   const isAgotado = product.en_stock === 0;
   const priceToDisplay = hasDiscount ? product.precio_dto : product.precio_normal;
@@ -83,50 +90,65 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
           <div className="lg:col-span-5 flex flex-col gap-space-md">
             <div className="relative w-full aspect-[3/4] bg-surface-container-low rounded-xl overflow-hidden shadow-md border border-surface-container-high">
               <img
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-all duration-300"
                 alt={product.nombre}
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ83lOkmlgc5yPPZHA-KKKmBKrRv8J3cDORSBNKocp-7bXRblftkBznLcErCM1hNNgBHdnb8UAK52DXprEhNQujxSZMHGylYwQ0iUgty11EhY3J9HPpHY0jQClpYw6y4lTuYG_6lWE9KJOnKhxFpaOu2jzIzhf93lx5HAhtG0D8XyhwMfLQQE5n9Wzbe1SQgM2iJ6yr8-hrWpHRFiD5ypYhJORe_1XXlloooz5QZ6J"
+                src={activeImage}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/Logo.jpeg';
+                }}
               />
               {/* Badges Layered */}
               <div className="absolute top-4 left-4 flex flex-col gap-2">
                 <span className="bg-primary text-on-primary font-label-md text-label-md px-space-md py-1 rounded-full shadow-md font-bold">
-                  Bestseller Internado 2026
+                  Bestseller Internado &amp; Prácticas
                 </span>
                 <span className="bg-tertiary-fixed text-primary font-label-md text-label-md px-space-md py-1 rounded-full font-bold shadow-md">
-                  -15% DTO Primera Compra
+                  -15% DTO Campaña
                 </span>
               </div>
               {/* Certified Peruvian Quality Micro-badge */}
               <div className="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-md p-space-sm rounded-lg shadow flex items-center gap-space-sm border border-surface-container-high">
                 <span className="material-symbols-outlined text-secondary text-[24px]">verified</span>
                 <div className="flex flex-col">
-                  <span className="font-label-sm text-label-sm text-primary uppercase font-bold">Confección Gamarra Premium</span>
-                  <span className="font-body-sm text-body-sm text-on-surface-variant text-xs">Costura doble remalle de grado quirúrgico</span>
+                  <span className="font-label-sm text-label-sm text-primary uppercase font-bold">Confección Nacional Certificada</span>
+                  <span className="font-body-sm text-body-sm text-on-surface-variant text-xs">Telas antifluido y antibacteriales de alto rendimiento</span>
                 </div>
               </div>
             </div>
 
-            {/* Secondary Micro Thumbnails from Stitch */}
+            {/* Secondary Micro Thumbnails */}
             <div className="grid grid-cols-3 gap-space-sm">
-              <div className="aspect-square bg-surface-container-low rounded-lg overflow-hidden ring-2 ring-primary p-0.5 cursor-pointer">
+              <div 
+                onClick={() => setActiveImage(product.imagen || `/productos/${product.slug}.jpg`)}
+                className={`aspect-square bg-surface-container-low rounded-lg overflow-hidden p-0.5 cursor-pointer transition-all ${activeImage === (product.imagen || `/productos/${product.slug}.jpg`) ? 'ring-2 ring-primary' : 'hover:opacity-80'}`}
+              >
                 <img
                   className="w-full h-full object-cover rounded-md"
-                  alt="Detalle de pretina elástica"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJcL7NGN09S5H-rMHPgZh-0AkE7w02UqTaTrUE0UQwBjcV6naUn6OdoCeb2vkNuCn7Tq41JVYInvDy3_iaG9rcBF1bifj5hmsUZhcwDF3gD1WryyuZWmc_U1mKpJzaWAn9dBQIPMEH4vrNiHbA3QK0qbDea65uVMxWt4EHkzlR9NMQ_pVnwhWO1fWEXd8u9AmfPUjfOFDUhvUm5g4Cd6so2v7pBF0aq2LpbTMUp6wv"
+                  alt="Vista frontal completa"
+                  src={product.imagen || `/productos/${product.slug}.jpg`}
                 />
               </div>
-              <div className="aspect-square bg-surface-container-low rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+              <div 
+                onClick={() => setActiveImage(`/productos/${product.slug}-2.jpg`)}
+                className={`aspect-square bg-surface-container-low rounded-lg overflow-hidden p-0.5 cursor-pointer transition-all ${activeImage === `/productos/${product.slug}-2.jpg` ? 'ring-2 ring-primary' : 'hover:opacity-80'}`}
+              >
                 <img
                   className="w-full h-full object-cover rounded-md"
-                  alt="Bolsillos laterales cargo"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDPHDfW8avbvJn8rbCe29YtFwJuhmcPBJmzSfCd9p80YFt-m9-0VsyMxr5H8iJBK9jsEmgaQOxbdSLRPtFN-kGq_uig_tAbb7uJt2c8iWK1eV6AQfkxy-RtqSLk6BbeTlvVnGgycOH9c1pIyOFoRfeWVBHUA5R5no6XOKBRLC8pNN3lSTFQ-s0DRLCUWyb7LABYYPJEnCElFMqM3ER2cjS5FtiLVn1zVXdQN3GN5vA"
+                  alt="Ángulo y detalles"
+                  src={`/productos/${product.slug}-2.jpg`}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = product.imagen || `/productos/${product.slug}.jpg`;
+                  }}
                 />
               </div>
-              <div className="aspect-square bg-surface-container-low rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+              <div 
+                onClick={() => setActiveImage('/Logo.jpeg')}
+                className={`aspect-square bg-surface-container-low rounded-lg overflow-hidden p-2 cursor-pointer flex items-center justify-center transition-all ${activeImage === '/Logo.jpeg' ? 'ring-2 ring-primary' : 'hover:opacity-80'}`}
+              >
                 <img
-                  className="w-full h-full object-cover rounded-md"
-                  alt="Espalda ergonómica stretch"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr0Ip1NC92H-Pvz43nXvpTNMJ-HJi6ims5hYyOPefvbtEHUDgHyABOOx3sLC1FfL_EsDm22-J9uS_m1OegwMHgoBRQs3r7Sb9EsZqQWwpZl6AgqRwlbXh7CrfGJ8Byc-xYIHVCdohW5YqoYI4RPLKj9AgVLHyv6qKRHg7zpWt_TkdvKGbnA7640XDnvjjzkiKUe0wylOK2qv5jzq6oL76YRg5JDj-ApF5YV6BEU6P_"
+                  className="w-full h-full object-contain"
+                  alt="Garantía de marca Shop & Care"
+                  src="/Logo.jpeg"
                 />
               </div>
             </div>

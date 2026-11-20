@@ -115,6 +115,7 @@ export async function initDatabase() {
       precio_normal REAL,
       precio_dto REAL,
       en_stock INTEGER DEFAULT 1,
+      imagen TEXT,
       tallas_json TEXT,
       colores_json TEXT,
       detalles_json TEXT
@@ -171,8 +172,8 @@ export async function initDatabase() {
     if (fs.existsSync(catalogoPath)) {
       const catalogo = JSON.parse(fs.readFileSync(catalogoPath, 'utf8'));
       const stmt = rawDb.prepare(`
-        INSERT INTO productos (slug, nombre, categoria, precio_normal, precio_dto, en_stock, tallas_json, colores_json, detalles_json)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO productos (slug, nombre, categoria, precio_normal, precio_dto, en_stock, imagen, tallas_json, colores_json, detalles_json)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `);
 
       for (const p of catalogo) {
@@ -185,6 +186,7 @@ export async function initDatabase() {
           p.precio_normal,
           p.precio_dto,
           enStock,
+          p.imagen || (`/productos/${p.slug}.jpg`),
           JSON.stringify(p.tallas || []),
           JSON.stringify(p.colores || []),
           JSON.stringify(p.detalles || [p.descripcion || ''])

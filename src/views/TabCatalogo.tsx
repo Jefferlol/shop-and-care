@@ -104,10 +104,10 @@ export const TabCatalogo: React.FC = () => {
               </span>
             </div>
             <h1 className="font-headline-xl text-headline-xl text-primary tracking-tight">
-              Catálogo Clínico &amp; Hospitalario
+              Catálogo de Scrubs, Mandil Médico e Indumentaria Médica
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-              Confección peruana certificada con tecnología antifluido y antibacterial. Equipamiento ergonómico de alta durabilidad para estudiantes universitarios, internos y profesionales de la salud.
+              Uniformes médicos y uniformes para prácticas con confección peruana certificada, telas antifluido y antibacterial. Equipamiento ergonómico, kit médico y accesorios médicos para internado y turnos hospitalarios.
             </p>
           </div>
 
@@ -141,7 +141,7 @@ export const TabCatalogo: React.FC = () => {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Buscar por modelo, tela o color..."
+                placeholder="Buscar scrub, mandil médico, uniformes médicos, kit médico, accesorios..."
                 className="w-full bg-surface-container-lowest pl-10 pr-4 py-2.5 rounded-lg text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-secondary-fixed shadow-sm border border-surface-container-high"
               />
             </div>
@@ -227,15 +227,10 @@ export const TabCatalogo: React.FC = () => {
                       <img
                         className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${isAgotado ? 'filter grayscale-[25%]' : ''}`}
                         alt={p.nombre}
-                        src={
-                          p.categoria === 'Instrumental'
-                            ? 'https://lh3.googleusercontent.com/aida-public/AB6AXuCEH11kUz_S9G4-EFB9Sw-1cfoGYNy2aL_HOgw7rgrk-xS_ndCOTl3Dge9Kcd7Uv-VwzU1905Nax26lMWZOMjj6avSHpCzq9Zdf18Lh_H3jZoJzZGLEN7p2bs2BGUo0qT1AhXY1_rbH3kWfdTq2Eff4rGyiwJM5oebwfMiY3-Dbw9MdlKafJSxdErQ8hzSSUfDsD5HahJK8Wp6NjgBr10ppwfTFM_lB8Fe9UKTTckDa'
-                            : p.slug.includes('varon')
-                            ? 'https://lh3.googleusercontent.com/aida-public/AB6AXuDJQv4VbzfXVxzDHxiqaSnQCW0rqIX88QmyPABSucCqp7s9N9evUZS9RUzsqPIKEZrXR-iNoF3yrKyT16YLXkPoc-9qsQZg4FoR1fCzZIwHuc4dI3_CbXLnW5W2j-3FdVh8IErBipJLXKD1h6r2p5t_ueIlr9OeEYskID0jp1V7u7Nu6h2_D-iVEMRwOCMhH5GWX31MegPGXsXlLIoi_oLX4SsS2wLfSX_9Hmn4A0k5'
-                            : p.slug.includes('alondra') || p.categoria === 'Guardapolvos y Casacas'
-                            ? 'https://lh3.googleusercontent.com/aida-public/AB6AXuDyUsIHhQq2hvM24SDYAE7m3u_ipgA3B0Sv48D0JL_rL3vuNJXjZoMnesMTNuhSma8pjkWGdUuyOYCYpd2SJO_DphCQQzhXzHJDAPkAdEWz-TpBiSwE7ZZKSMGfC7VRLYVj8z5P_QubXiZEbMsSVpMmJtXP0TOV-V2GxZvLbKK23N4srwULcOyAOEmXImTb-Usbeye46pQTyPtpp8XO3uHdCLkV__X-qworzqpVaJk6'
-                            : 'https://lh3.googleusercontent.com/aida-public/AB6AXuCWhdyke8uhCDTs93Bmq61pT9J5VA5F1SSoJedkP08A-k4jPGIxOnLiqgEvIKEir1FQw-NwsLCwW794jr-FX-2sYPuvgUwXAcETp00od3Vr_Bo59_Y-ZKvCc02RFqHAV_fzZnWyQJp7QrSWET-HVKLTPBPZ4jLlBzARKvHLlhflEI8LBvvHbwtthNv-10bt76436kEI78ept7kXBRQh_rWCbk9t5NUv2Lqy5YP7e5UB'
-                        }
+                        src={p.imagen || `/productos/${p.slug}.jpg`}
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = '/Logo.jpeg';
+                        }}
                       />
 
                       {/* Badges */}

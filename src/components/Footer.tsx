@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
               />
               <div className="flex flex-col">
                 <span className="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight">Shop &amp; Care</span>
-                <span className="font-label-sm text-label-sm text-secondary-fixed-dim">Uniformes médicos, accesorios y más</span>
+                <span className="font-label-sm text-label-sm text-secondary-fixed-dim">Scrubs, mandiles médicos e indumentaria</span>
               </div>
             </div>
             <p className="font-body-sm text-body-sm text-on-primary/80 leading-relaxed">

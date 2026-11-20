@@ -4,8 +4,8 @@
     "slug": "scrubs-carlos-varon",
     "nombre": "Scrubs Carlos (Varón)",
     "categoria": "Scrubs Varón",
-    "precio_normal": 130.00,
-    "precio_dto": 110.50,
+    "precio_normal": 120.0,
+    "precio_dto": 99.0,
     "en_stock": 1,
     "descripcion": "Diseñado especialmente para largas horas de guardia y rotaciones hospitalarias. Cuenta con bolsillos externos de acceso rápido para libreta de notas, tensiómetro portátil y lapiceros. Tela con tecnología antifluido de alta resistencia que no pierde color con los lavados frecuentes.",
     "tela": "Antifluido Stretch 4-Way (95% Poliéster / 5% Spandex)",
@@ -15,12 +15,29 @@
       "Durabilidad extrema de color tras lavados clínicos",
       "Tejido liviano con elasticidad bidireccional para maniobras clínicas"
     ],
-    "tallas": ["S", "M", "L", "XL"],
+    "tallas": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "colores": [
-      { "nombre": "Azul Marino Institucional", "hex": "#0D3365" },
-      { "nombre": "Celeste Quirófano", "hex": "#9CCBEF" },
-      { "nombre": "Negro Guardia", "hex": "#1A1A1A" },
-      { "nombre": "Verde Quirúrgico", "hex": "#2D6A4F" }
+      {
+        "nombre": "Azul Marino Institucional",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Celeste Quirófano",
+        "hex": "#9CCBEF"
+      },
+      {
+        "nombre": "Negro Guardia",
+        "hex": "#1A1A1A"
+      },
+      {
+        "nombre": "Verde Quirúrgico",
+        "hex": "#2D6A4F"
+      }
     ],
     "resenas_iniciales": [
       {
@@ -30,15 +47,16 @@
         "comentario": "Excelente caída y muy fresco para guardias de 24 horas. Los bolsillos externos entran perfecto con las hojas de evolución.",
         "fecha": "Hace 2 semanas"
       }
-    ]
+    ],
+    "imagen": "/productos/scrubs-carlos-varon.jpg"
   },
   {
     "id": 2,
     "slug": "scrubs-boris-varon",
     "nombre": "Scrubs Boris (Varón)",
     "categoria": "Scrubs Varón",
-    "precio_normal": 135.00,
-    "precio_dto": 114.75,
+    "precio_normal": 125.0,
+    "precio_dto": 105.0,
     "en_stock": 1,
     "descripcion": "Elegancia minimalista con máxima seguridad en ambientes críticos. Incorpora bolsillos internos de seguridad que evitan que tus pertenencias se deslicen durante maniobras de reanimación o traslados. Cuello V reforzado y tacto ultra suave.",
     "tela": "Antifluido Clásico Repelente (100% Microfibra Técnica)",
@@ -48,12 +66,29 @@
       "Tela antifluido que repele salpicaduras accidentales",
       "Sensación fresca y transpirable para climas cálidos"
     ],
-    "tallas": ["S", "M", "L", "XL"],
+    "tallas": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "colores": [
-      { "nombre": "Azul Marino", "hex": "#0D3365" },
-      { "nombre": "Gris Plomo", "hex": "#4A5568" },
-      { "nombre": "Azul Acero", "hex": "#2B4C7E" },
-      { "nombre": "Vino Tinto", "hex": "#581845" }
+      {
+        "nombre": "Azul Marino",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Gris Plomo",
+        "hex": "#4A5568"
+      },
+      {
+        "nombre": "Azul Acero",
+        "hex": "#2B4C7E"
+      },
+      {
+        "nombre": "Vino Tinto",
+        "hex": "#581845"
+      }
     ],
     "resenas_iniciales": [
       {
@@ -63,15 +98,16 @@
         "comentario": "El corte del modelo Boris es más estilizado y los bolsillos internos evitan que se caiga el celular al agacharse en cama de paciente.",
         "fecha": "Hace 1 mes"
       }
-    ]
+    ],
+    "imagen": "/productos/scrubs-boris-varon.jpg"
   },
   {
     "id": 3,
     "slug": "scrubs-oriana-mujer",
     "nombre": "Scrubs Oriana (Mujer)",
     "categoria": "Scrubs Mujer",
-    "precio_normal": 140.00,
-    "precio_dto": 119.00,
+    "precio_normal": 125.0,
+    "precio_dto": 105.0,
     "en_stock": 1,
     "descripcion": "El scrub más solicitado por estudiantes de medicina y enfermería en Perú. Combina protección antibacterial certificada con elasticidad stretch que estiliza y acompaña cada movimiento. Acabado repelente a líquidos biológicos.",
     "tela": "Antifluido Antibacterial + Spandex Premium",
@@ -81,12 +117,30 @@
       "Tejido liviano anti-arrugas que no necesita planchado diario",
       "Pantalón jogger con pretina elástica y cordón ajustable"
     ],
-    "tallas": ["XS", "S", "M", "L", "XL"],
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "colores": [
-      { "nombre": "Rosa Pastel Cálido", "hex": "#EFAEBF" },
-      { "nombre": "Celeste Quirúrgico", "hex": "#9CCBEF" },
-      { "nombre": "Azul Marino Clínico", "hex": "#0D3365" },
-      { "nombre": "Lila Suave", "hex": "#C3ACD0" }
+      {
+        "nombre": "Rosa Pastel Cálido",
+        "hex": "#EFAEBF"
+      },
+      {
+        "nombre": "Celeste Quirúrgico",
+        "hex": "#9CCBEF"
+      },
+      {
+        "nombre": "Azul Marino Clínico",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Lila Suave",
+        "hex": "#C3ACD0"
+      }
     ],
     "resenas_iniciales": [
       {
@@ -96,15 +150,16 @@
         "comentario": "La tela es comodísima, no se arruga después del lavado y el color rosa pastel es precioso. Recomiendo pedir su talla habitual.",
         "fecha": "Hace 3 semanas"
       }
-    ]
+    ],
+    "imagen": "/productos/scrubs-oriana-mujer.jpg"
   },
   {
     "id": 4,
     "slug": "scrubs-hanny-mujer",
     "nombre": "Scrubs Hanny (Mujer)",
     "categoria": "Scrubs Mujer",
-    "precio_normal": 135.00,
-    "precio_dto": 114.75,
+    "precio_normal": 120.0,
+    "precio_dto": 99.0,
     "en_stock": 1,
     "descripcion": "Confort total para guardias extenuantes. El modelo Hanny destaca por su tejido ultra fresco con caída natural, tratamiento antimicrobial y gran resistencia a lavados con desinfectantes hospitalarios sin decolorar.",
     "tela": "Antifluido Micro-Touch Antibacterial",
@@ -114,22 +169,41 @@
       "Secado ultra rápido en menos de 45 minutos",
       "Cintura de pantalón con soporte lumbar suave"
     ],
-    "tallas": ["XS", "S", "M", "L", "XL"],
-    "colores": [
-      { "nombre": "Azul Marino", "hex": "#0D3365" },
-      { "nombre": "Turquesa Médico", "hex": "#1B998B" },
-      { "nombre": "Borgoña", "hex": "#6B1D2F" },
-      { "nombre": "Negro Profesional", "hex": "#1A1A1A" }
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Azul Marino",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Turquesa Médico",
+        "hex": "#1B998B"
+      },
+      {
+        "nombre": "Borgoña",
+        "hex": "#6B1D2F"
+      },
+      {
+        "nombre": "Negro Profesional",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/scrubs-hanny-mujer.jpg"
   },
   {
     "id": 5,
     "slug": "scrubs-urbana-mujer",
     "nombre": "Scrubs Urbana (Mujer)",
     "categoria": "Scrubs Mujer",
-    "precio_normal": 145.00,
-    "precio_dto": 123.25,
+    "precio_normal": 125.0,
+    "precio_dto": 105.0,
     "en_stock": 1,
     "descripcion": "Estilo contemporáneo urbano adaptado a la rutina hospitalaria. Corte moderno con múltiples compartimentos tácticos pensados para quien necesita llevar termómetro, sellos, libreta y guantes al alcance de la mano.",
     "tela": "Antifluido TechFlex Antibacterial",
@@ -139,22 +213,40 @@
       "Resistente a salpicaduras de cloro diluido y yodo",
       "Transpirabilidad activa que previene sudoración excesiva"
     ],
-    "tallas": ["XS", "S", "M", "L"],
-    "colores": [
-      { "nombre": "Verde Salvia", "hex": "#7A9E7E" },
-      { "nombre": "Azul Marino", "hex": "#0D3365" },
-      { "nombre": "Palo Rosa", "hex": "#EFAEBF" },
-      { "nombre": "Blanco Puro", "hex": "#FFFFFF" }
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Verde Salvia",
+        "hex": "#7A9E7E"
+      },
+      {
+        "nombre": "Azul Marino",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Palo Rosa",
+        "hex": "#EFAEBF"
+      },
+      {
+        "nombre": "Blanco Puro",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/scrubs-urbana-mujer.jpg"
   },
   {
     "id": 6,
     "slug": "scrubs-silvia-mujer",
     "nombre": "Scrubs Silvia (Mujer)",
     "categoria": "Scrubs Mujer",
-    "precio_normal": 138.00,
-    "precio_dto": 117.30,
+    "precio_normal": 120.0,
+    "precio_dto": 99.0,
     "en_stock": 1,
     "descripcion": "Liviano, cómodo y de tacto algodonoso. Su composición avanzada ofrece una caída elegante sin perder la barrera impermeable requerida en salas de procedimientos y consulta externa.",
     "tela": "Antifluido SoftShield Liviano",
@@ -164,22 +256,40 @@
       "Pantalón corte recto con elástico perimetral",
       "Durabilidad de color garantizada por más de 100 lavados"
     ],
-    "tallas": ["XS", "S", "M", "L"],
-    "colores": [
-      { "nombre": "Celeste Cielo", "hex": "#9CCBEF" },
-      { "nombre": "Azul Real", "hex": "#19456B" },
-      { "nombre": "Ciruela Profundo", "hex": "#4D194D" },
-      { "nombre": "Grafito", "hex": "#3D405B" }
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Celeste Cielo",
+        "hex": "#9CCBEF"
+      },
+      {
+        "nombre": "Azul Real",
+        "hex": "#19456B"
+      },
+      {
+        "nombre": "Ciruela Profundo",
+        "hex": "#4D194D"
+      },
+      {
+        "nombre": "Grafito",
+        "hex": "#3D405B"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/scrubs-silvia-mujer.jpg"
   },
   {
     "id": 7,
     "slug": "scrubs-estefany-mujer",
     "nombre": "Scrubs Estefany (Mujer)",
     "categoria": "Scrubs Mujer",
-    "precio_normal": 148.00,
-    "precio_dto": 125.80,
+    "precio_normal": 135.0,
+    "precio_dto": 115.0,
     "en_stock": 1,
     "descripcion": "El scrub premium para ceremonias de bata blanca, internado médico y presentaciones clínicas. Confeccionado en tela Polystel antibacterial de alta gama que brinda porte formal, frescura y excelente resistencia al uso diario.",
     "tela": "Polystel Clínico Antibacterial Stretch",
@@ -189,11 +299,25 @@
       "Propiedades antimicrobianas duraderas",
       "Cintura anatómica diseñada para comodidad prolongada"
     ],
-    "tallas": ["XS", "S", "M", "L"],
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
     "colores": [
-      { "nombre": "Azul Marino Institucional", "hex": "#0D3365" },
-      { "nombre": "Blanco Clínico", "hex": "#FFFFFF" },
-      { "nombre": "Verde Quirófano", "hex": "#1E5128" }
+      {
+        "nombre": "Azul Marino Institucional",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Blanco Clínico",
+        "hex": "#FFFFFF"
+      },
+      {
+        "nombre": "Verde Quirófano",
+        "hex": "#1E5128"
+      }
     ],
     "resenas_iniciales": [
       {
@@ -203,15 +327,16 @@
         "comentario": "El Polystel le da un porte impecable para pasar visita con los médicos asistentes. Valió totalmente la pena.",
         "fecha": "Hace 2 meses"
       }
-    ]
+    ],
+    "imagen": "/productos/scrubs-estefany-mujer.jpg"
   },
   {
     "id": 8,
     "slug": "casaca-micropolar-mujer",
     "nombre": "Casaca Micropolar (Mujer)",
     "categoria": "Guardapolvos y Casacas",
-    "precio_normal": 110.00,
-    "precio_dto": 93.50,
+    "precio_normal": 110.0,
+    "precio_dto": 89.0,
     "en_stock": 1,
     "descripcion": "La compañera indispensable para las madrugadas gélidas en pisos hospitalarios o postas de sierra. Capa exterior antifluido que protege contra salpicaduras y forro interno en micropolar térmico que conserva el calor corporal sin abultar.",
     "tela": "Exterior Antifluido + Interior Forro Micropolar Térmico",
@@ -221,21 +346,37 @@
       "Bolsillos laterales con cremallera para mantener manos cálidas",
       "Puños elásticos que no interfieren con el lavado de manos quirúrgico"
     ],
-    "tallas": ["XS", "S", "M", "L", "XL"],
-    "colores": [
-      { "nombre": "Azul Marino Guardia", "hex": "#0D3365" },
-      { "nombre": "Negro Clásico", "hex": "#1A1A1A" },
-      { "nombre": "Gris Jaspeado", "hex": "#5C6B73" }
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Azul Marino Guardia",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Negro Clásico",
+        "hex": "#1A1A1A"
+      },
+      {
+        "nombre": "Gris Jaspeado",
+        "hex": "#5C6B73"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/casaca-micropolar-mujer.jpg"
   },
   {
     "id": 9,
     "slug": "guardapolvo-alondra-mujer",
-    "nombre": "Guardapolvo Alondra (Mujer)",
+    "nombre": "Mandil médico Alondra (Guardapolvo)",
     "categoria": "Guardapolvos y Casacas",
-    "precio_normal": 95.00,
-    "precio_dto": 80.75,
+    "precio_normal": 95.0,
+    "precio_dto": 79.0,
     "en_stock": 0,
     "descripcion": "Guardapolvo clásico entallado para laboratorio, rotación y consulta externa. Dispone de bolsillo interno para estetoscopio y bolsillos exteriores amplios. Tela antifluido antibacterial de fácil lavado. (Actualmente agotado por alta demanda de inicio de semestre).",
     "tela": "Antifluido Clínico 100% Repelente",
@@ -245,19 +386,29 @@
       "Cierre con botones ocultos anti-enganche",
       "Abertura posterior para libertad de movimiento"
     ],
-    "tallas": ["XS", "S", "M", "L", "XL"],
-    "colores": [
-      { "nombre": "Blanco Clínico Puro", "hex": "#FFFFFF" }
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Blanco Clínico Puro",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/guardapolvo-alondra-mujer.jpg"
   },
   {
     "id": 10,
     "slug": "guardapolvo-moana-mujer",
-    "nombre": "Guardapolvo Moana (Mujer)",
+    "nombre": "Mandil médico Moana (Guardapolvo)",
     "categoria": "Guardapolvos y Casacas",
-    "precio_normal": 98.00,
-    "precio_dto": 83.30,
+    "precio_normal": 95.0,
+    "precio_dto": 79.0,
     "en_stock": 1,
     "descripcion": "Guardapolvo ergonómico femenino con corte princesa. Combina la sobriedad requerida por universidades peruanas (UNMSM, UPCH, UCSUR, USMP) con bolsillos técnicos internos y externos para llevar todo el instrumental de pase de visita.",
     "tela": "Antifluido Antibacterial Blanco Óptico",
@@ -267,19 +418,29 @@
       "Tela blanca con tratamiento anti-manchas de tintura y yodo",
       "Manga regulable para fácil lavado de manos"
     ],
-    "tallas": ["XS", "S", "M", "L", "XL"],
-    "colores": [
-      { "nombre": "Blanco Óptico", "hex": "#FFFFFF" }
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Blanco Óptico",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/guardapolvo-moana-mujer.jpg"
   },
   {
     "id": 11,
     "slug": "modelo-candy-mujer",
-    "nombre": "Modelo Candy (Mujer)",
+    "nombre": "Scrub Modelo Candy (Mujer)",
     "categoria": "Scrubs Mujer",
-    "precio_normal": 132.00,
-    "precio_dto": 112.20,
+    "precio_normal": 115.0,
+    "precio_dto": 95.0,
     "en_stock": 1,
     "descripcion": "El scrub juvenil y vibrante preferido por residentes de pediatría, obstetricia y enfermería. Diseñado con bolsillos externos de fácil acceso y tela de alta elasticidad que resiste turnos intensos con una sonrisa.",
     "tela": "Antifluido Confort Antibacterial",
@@ -289,22 +450,41 @@
       "Tratamiento antibacteriano de larga duración",
       "Sensación ultra ligera sobre la piel"
     ],
-    "tallas": ["XS", "S", "M", "L", "XL"],
-    "colores": [
-      { "nombre": "Rosa Suave Candy", "hex": "#EFAEBF" },
-      { "nombre": "Lila Pastel", "hex": "#C3ACD0" },
-      { "nombre": "Azul Eléctrico", "hex": "#0056B3" },
-      { "nombre": "Verde Menta", "hex": "#A7D7C5" }
+    "tallas": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Rosa Suave Candy",
+        "hex": "#EFAEBF"
+      },
+      {
+        "nombre": "Lila Pastel",
+        "hex": "#C3ACD0"
+      },
+      {
+        "nombre": "Azul Eléctrico",
+        "hex": "#0056B3"
+      },
+      {
+        "nombre": "Verde Menta",
+        "hex": "#A7D7C5"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/modelo-candy-mujer.jpg"
   },
   {
     "id": 12,
     "slug": "mandil-antifluido-manga-larga-unisex",
-    "nombre": "Mandil antifluido manga larga (Unisex)",
+    "nombre": "Mandil médico antifluido manga larga (Unisex)",
     "categoria": "Guardapolvos y Casacas",
-    "precio_normal": 87.00,
-    "precio_dto": 74.00,
+    "precio_normal": 85.0,
+    "precio_dto": 69.0,
     "en_stock": 1,
     "descripcion": "Mandil de protección biológica para procedimientos ambulatorios, toma de muestras y necropsias. Elaborado en tejido impermeable certificado con puños rib elásticos ajustables que sellan perfectamente bajo los guantes de látex o nitrilo.",
     "tela": "Tejido Barrera Antifluido Nivel 3",
@@ -314,20 +494,32 @@
       "Cobertura completa hasta la rodilla",
       "Lavable y reutilizable hasta 60 ciclos"
     ],
-    "tallas": ["S", "M", "L", "XL"],
-    "colores": [
-      { "nombre": "Blanco Clínico", "hex": "#FFFFFF" },
-      { "nombre": "Celeste Procedimientos", "hex": "#9CCBEF" }
+    "tallas": [
+      "S",
+      "M",
+      "L",
+      "XL"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Blanco Clínico",
+        "hex": "#FFFFFF"
+      },
+      {
+        "nombre": "Celeste Procedimientos",
+        "hex": "#9CCBEF"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/mandil-antifluido-manga-larga-unisex.jpg"
   },
   {
     "id": 13,
     "slug": "set-de-instrumental-basico",
-    "nombre": "Set de instrumental básico",
+    "nombre": "Kit médico de instrumental quirúrgico básico",
     "categoria": "Instrumental",
-    "precio_normal": 249.90,
-    "precio_dto": 212.40,
+    "precio_normal": 85.0,
+    "precio_dto": 69.0,
     "en_stock": 1,
     "descripcion": "Kit quirúrgico básico esencial para tópicos de urgencia, suturas y curaciones. Incluye Pinza Kelly curva, Pinza de disección anatómica y con dientes, Tijera Mayo recta y Portagujas Mayo-Hegar de precisión, todo en un estuche de lona impermeable lavable.",
     "tela": "Acero Inoxidable Quirúrgico Alemán AISI 420 + Estuche Lona",
@@ -338,10 +530,18 @@
       "Portagujas Mayo-Hegar de 14 cm con estrías de agarre firme",
       "Garantía oficial por descalibración de fábrica"
     ],
-    "tallas": ["Kit Estándar"],
+    "tallas": [
+      "Kit Estándar"
+    ],
     "colores": [
-      { "nombre": "Estuche Azul Marino", "hex": "#0D3365" },
-      { "nombre": "Estuche Negro", "hex": "#1A1A1A" }
+      {
+        "nombre": "Estuche Azul Marino",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Estuche Negro",
+        "hex": "#1A1A1A"
+      }
     ],
     "resenas_iniciales": [
       {
@@ -351,15 +551,16 @@
         "comentario": "El acero es de excelente calidad, no se oxida tras varias esterilizaciones en autoclave. Muy superior a los sets genéricos de Jr. Huancavelica.",
         "fecha": "Hace 2 semanas"
       }
-    ]
+    ],
+    "imagen": "/productos/set-de-instrumental-basico.jpg"
   },
   {
     "id": 14,
     "slug": "linterna-de-diagnostico-y-martillo",
-    "nombre": "Linterna de diagnóstico y martillo",
+    "nombre": "Accesorios médicos: Linterna diagnóstica y martillo",
     "categoria": "Instrumental",
-    "precio_normal": 69.00,
-    "precio_dto": 58.80,
+    "precio_normal": 45.0,
+    "precio_dto": 35.0,
     "en_stock": 1,
     "descripcion": "Combo neurológico indispensable para el examen físico en guardia. Linterna clínica de luz blanca cálida enfocada con pupilería métrica impresa en el cuerpo de aluminio (pilas AAA incluidas) y Martillo de reflejos Taylor con punta de goma hipoalergénica.",
     "tela": "Aluminio Aeronáutico Anodizado + Goma Quirúrgica",
@@ -369,21 +570,33 @@
       "Martillo Taylor con mango balanceado para prueba de reflejos rotulianos",
       "Pilas AAA alcalinas incluidas listas para usar"
     ],
-    "tallas": ["Estándar"],
-    "colores": [
-      { "nombre": "Azul Marino", "hex": "#0D3365" },
-      { "nombre": "Plata Quirúrgico", "hex": "#C0C0C0" },
-      { "nombre": "Negro Mate", "hex": "#1A1A1A" }
+    "tallas": [
+      "Estándar"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Azul Marino",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Plata Quirúrgico",
+        "hex": "#C0C0C0"
+      },
+      {
+        "nombre": "Negro Mate",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/linterna-de-diagnostico-y-martillo.jpg"
   },
   {
     "id": 15,
     "slug": "oximetro-de-pulso",
-    "nombre": "Oxímetro de pulso",
+    "nombre": "Accesorios médicos: Oxímetro de pulso digital",
     "categoria": "Instrumental",
-    "precio_normal": 79.90,
-    "precio_dto": 67.90,
+    "precio_normal": 49.0,
+    "precio_dto": 38.0,
     "en_stock": 1,
     "descripcion": "Pulsioxímetro digital de respuesta inmediata para triaje rápido y evaluación continua de saturación de oxígeno (SpO2) y pulso cardíaco en guardias de emergencia. Pantalla OLED a 4 direcciones con curva pletismográfica.",
     "tela": "Carcasa ABS Médico con Silicona Amortiguadora",
@@ -393,20 +606,29 @@
       "Alarma sonora programable para saturaciones inferiores a 90%",
       "Incluye cordón para colgar al cuello y funda de silicona"
     ],
-    "tallas": ["Estándar Adulto/Pediátrico"],
-    "colores": [
-      { "nombre": "Azul Marino", "hex": "#0D3365" },
-      { "nombre": "Blanco Puro", "hex": "#FFFFFF" }
+    "tallas": [
+      "Estándar Adulto/Pediátrico"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Azul Marino",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Blanco Puro",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/oximetro-de-pulso.jpg"
   },
   {
     "id": 16,
     "slug": "tensiometro-aneroide-clinico",
-    "nombre": "Tensiómetro aneroide clínico",
+    "nombre": "Accesorios médicos: Tensiómetro aneroide clínico",
     "categoria": "Instrumental",
-    "precio_normal": 115.00,
-    "precio_dto": 97.75,
+    "precio_normal": 75.0,
+    "precio_dto": 59.0,
     "en_stock": 1,
     "descripcion": "Tensiómetro aneroide de grado clínico diseñado para soportar el ritmo exigente de emergencias hospitalarias y campañas médicas en postas de salud. Manómetro calibrado resistente a caídas leves y brazalete de nylon reforzado con escala de rango arterial.",
     "tela": "Manómetro Metálico de Precisión + Brazalete Nylon Lavable",
@@ -416,12 +638,24 @@
       "Pera de goma con válvula de tornillo cromada de desinflado controlado",
       "Estuche protector con cierre de cremallera incluido"
     ],
-    "tallas": ["Adulto Estándar (22-32 cm)"],
-    "colores": [
-      { "nombre": "Azul Marino Clínico", "hex": "#0D3365" },
-      { "nombre": "Negro Profesional", "hex": "#1A1A1A" },
-      { "nombre": "Borgoña", "hex": "#6B1D2F" }
+    "tallas": [
+      "Adulto Estándar (22-32 cm)"
     ],
-    "resenas_iniciales": []
+    "colores": [
+      {
+        "nombre": "Azul Marino Clínico",
+        "hex": "#0D3365"
+      },
+      {
+        "nombre": "Negro Profesional",
+        "hex": "#1A1A1A"
+      },
+      {
+        "nombre": "Borgoña",
+        "hex": "#6B1D2F"
+      }
+    ],
+    "resenas_iniciales": [],
+    "imagen": "/productos/tensiometro-aneroide-clinico.jpg"
   }
 ]

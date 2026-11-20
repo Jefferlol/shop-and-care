@@ -19,12 +19,12 @@ export const TabInicio: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="font-headline-xl text-headline-xl text-primary tracking-tight">
-              Scrubs médicos ergonómicos y frescos para tus turnos más exigentes
+              Scrub, Mandil Médico y Uniformes Médicos para tu Internado y Prácticas
             </h1>
 
             {/* Subtitle */}
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-              Uniformes médicos diseñados exclusivamente para estudiantes de ciencias de la salud, internos y profesionales en hospitales y clínicas del Perú. Confección en tela antifluido 4-way stretch, ultra liviana, fresca y antibacterial.
+              La mejor <strong>indumentaria médica</strong>, <strong>uniformes para prácticas</strong>, <strong>kit médico</strong> completo y <strong>accesorios médicos</strong> diseñados para estudiantes, internos y profesionales en hospitales y clínicas del Perú. Confección en tela antifluido 4-way stretch, ultra liviana, fresca y antibacterial.
             </p>
 
             {/* Dual Action Buttons */}
@@ -159,7 +159,7 @@ export const TabInicio: React.FC = () => {
             </div>
           </div>
 
-          {/* Tarjeta 3: Guardapolvos y Casacas */}
+          {/* Tarjeta 3: Mandil Médico y Casacas */}
           <div
             onClick={() => navigateTo('catalogo', { categoria: 'Guardapolvos y Casacas' })}
             className="group p-space-lg bg-surface-container-low rounded-2xl border border-surface-container-high hover:border-secondary hover:shadow-md transition-all cursor-pointer flex flex-col justify-between"
@@ -169,10 +169,10 @@ export const TabInicio: React.FC = () => {
                 <span className="material-symbols-outlined text-[28px]">checkroom</span>
               </div>
               <h3 className="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors font-bold">
-                Guardapolvos y Casacas
+                Mandil Médico y Casacas
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                Guardapolvos Alondra y Moana, mandiles antifluido y casaca micropolar para guardias frías.
+                Mandil médico Alondra y Moana, uniformes para prácticas antifluido y casaca térmica micropolar.
               </p>
             </div>
             <div className="mt-space-md flex items-center gap-1 text-secondary font-label-md font-bold text-label-md">
@@ -181,7 +181,7 @@ export const TabInicio: React.FC = () => {
             </div>
           </div>
 
-          {/* Tarjeta 4: Instrumental */}
+          {/* Tarjeta 4: Kit Médico y Accesorios */}
           <div
             onClick={() => navigateTo('catalogo', { categoria: 'Instrumental' })}
             className="group p-space-lg bg-surface-container-low rounded-2xl border border-surface-container-high hover:border-secondary hover:shadow-md transition-all cursor-pointer flex flex-col justify-between"
@@ -191,14 +191,14 @@ export const TabInicio: React.FC = () => {
                 <span className="material-symbols-outlined text-[28px]">stethoscope</span>
               </div>
               <h3 className="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors font-bold">
-                Instrumental Básico
+                Kit Médico y Accesorios
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                Set quirúrgico en estuche, tensiómetros aneroides, oxímetros OLED y linternas clínicas.
+                Kit médico de instrumental quirúrgico, tensiómetros clínicos, oxímetros OLED y accesorios médicos.
               </p>
             </div>
             <div className="mt-space-md flex items-center gap-1 text-secondary font-label-md font-bold text-label-md">
-              <span>Ver instrumental</span>
+              <span>Ver accesorios</span>
               <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </div>
           </div>

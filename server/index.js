@@ -104,6 +104,7 @@ app.get('/api/productos', (req, res) => {
       const pResenas = resenasAprobadas.filter(r => r.producto_slug === p.slug);
       return {
         ...p,
+        imagen: p.imagen || `/productos/${p.slug}.jpg`,
         tallas: p.tallas_json ? JSON.parse(p.tallas_json) : [],
         colores: p.colores_json ? JSON.parse(p.colores_json) : [],
         detalles: p.detalles_json ? JSON.parse(p.detalles_json) : [],

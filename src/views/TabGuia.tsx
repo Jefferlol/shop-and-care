@@ -255,10 +255,10 @@ export const TabGuia: React.FC = () => {
                 <span>Atención y Asesoría Personalizada</span>
               </div>
               <h1 className="font-headline-xl text-headline-xl text-primary-container tracking-tight max-w-4xl">
-                Comunidad, Asesoría Clínica y Contacto
+                Asesoría en Scrub, Mandil Médico e Indumentaria Médica
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-                ¿Dudas con la talla ideal para tus guardias o necesitas uniformes para tu promoción? Escríbenos y nuestro equipo te asesorará en vivo.
+                ¿Dudas con la talla de tus uniformes médicos o necesitas tu kit médico y accesorios para el internado y prácticas? Escríbenos y nuestro equipo te asesorará en vivo con promociones exclusivas.
               </p>
             </div>
 
