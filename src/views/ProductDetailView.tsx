@@ -13,10 +13,10 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
   const { hasDiscount, discountCode, whatsappNumber, navigateTo, addToCart } = useApp();
 
   const [selectedColor, setSelectedColor] = useState<ColorOption>(
-    product.colores[0] || { nombre: 'Navy Blue (UNMSM)', hex: '#001e44' }
+    product.colores?.[0] || { nombre: 'Azul Marino Institucional', hex: '#0D3365' }
   );
   const [selectedTalla, setSelectedTalla] = useState<string>(
-    product.tallas[0] || 'S'
+    product.tallas?.[0] || 'M'
   );
   const [activeImage, setActiveImage] = useState<string>(
     product.imagen || `/productos/${product.slug}.jpg`
@@ -27,6 +27,12 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
 
   React.useEffect(() => {
     setActiveImage(product.imagen || `/productos/${product.slug}.jpg`);
+    if (product.colores && product.colores.length > 0) {
+      setSelectedColor(product.colores[0]);
+    }
+    if (product.tallas && product.tallas.length > 0) {
+      setSelectedTalla(product.tallas[0]);
+    }
   }, [product.slug, product.imagen]);
 
   const isAgotado = product.en_stock === 0;
@@ -159,8 +165,15 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
             {/* Title & Social Proof */}
             <div className="flex flex-col gap-space-xs">
               <h3 className="font-headline-lg text-headline-lg text-primary tracking-tight">
-                {product.nombre} — Filipina + Pantalón Jogger
+                {product.nombre}
               </h3>
+              <span className="font-label-md text-label-md text-secondary font-bold">
+                {product.categoria.includes('Scrubs')
+                  ? 'Conjunto Quirúrgico: Filipina Ergonómica + Pantalón Jogger'
+                  : product.categoria.includes('Guardapolvos')
+                  ? 'Prenda de Protección Clínica y Pase de Visita'
+                  : 'Instrumental y Accesorios Médicos de Precisión'}
+              </span>
               {/* Rating in Heart Pink directly from Stitch */}
               <div className="flex flex-wrap items-center gap-2 mt-1">
                 <div className="flex items-center text-tertiary-fixed-dim">
@@ -170,7 +183,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
                 </div>
                 <span className="font-label-md text-label-md text-primary font-bold">5.0</span>
                 <span className="text-on-surface-variant font-body-sm text-body-sm">
-                  (142 reseñas verificadas de internas en Lima y provincias)
+                  (142 reseñas verificadas de internas y médicos en Lima y provincias)
                 </span>
               </div>
             </div>
@@ -189,42 +202,39 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
                 <span className="bg-tertiary-fixed text-primary font-label-md text-label-md px-3 py-1 rounded-full font-bold">
                   Ahorras S/ {savings}
                 </span>
-                <span className="text-secondary font-label-sm text-label-sm font-semibold">Incluye IGV &amp; Factura</span>
+                <span className="text-secondary font-label-sm text-label-sm font-semibold">Incluye IGV &amp; Boleta/Factura</span>
               </div>
             </div>
 
-            {/* Color Swatch Selector with Hospital Names from Stitch */}
-            <div className="flex flex-col gap-space-xs">
-              <div className="flex items-center justify-between">
-                <span className="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">
-                  1. Selecciona Color Clínico:
-                </span>
-                <span className="font-label-sm text-label-sm text-secondary font-bold">
-                  {selectedColor.nombre} Seleccionado
-                </span>
+            {/* Color Swatch Selector from product.colores */}
+            {product.colores && product.colores.length > 0 && (
+              <div className="flex flex-col gap-space-xs">
+                <div className="flex items-center justify-between">
+                  <span className="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">
+                    1. Selecciona Color Clínico:
+                  </span>
+                  <span className="font-label-sm text-label-sm text-secondary font-bold">
+                    {selectedColor?.nombre} Seleccionado
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-space-sm">
+                  {product.colores.map((col) => (
+                    <button
+                      key={col.nombre}
+                      onClick={() => setSelectedColor(col)}
+                      className={`flex items-center gap-2 px-space-md py-2 rounded-lg text-left transition-all cursor-pointer ${
+                        selectedColor?.nombre === col.nombre
+                          ? 'bg-surface-container-lowest ring-2 ring-primary shadow-sm'
+                          : 'bg-surface-container-low hover:bg-surface-container-high'
+                      }`}
+                    >
+                      <span className="w-4 h-4 rounded-full border border-black/20 shrink-0" style={{ backgroundColor: col.hex }} />
+                      <span className="font-label-md text-label-md text-primary font-semibold">{col.nombre}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-space-sm">
-                {[
-                  { nombre: 'Navy Blue (UNMSM)', hex: '#001e44' },
-                  { nombre: 'Celeste San Fernando', hex: '#9dccf0' },
-                  { nombre: 'Vino Cayetano', hex: '#522634' },
-                  { nombre: 'Verde Rebagliati', hex: '#205040' },
-                ].map((col) => (
-                  <button
-                    key={col.nombre}
-                    onClick={() => setSelectedColor(col)}
-                    className={`flex items-center gap-2 px-space-md py-2 rounded-lg text-left transition-all cursor-pointer ${
-                      selectedColor.nombre === col.nombre
-                        ? 'bg-surface-container-lowest ring-2 ring-primary shadow-sm'
-                        : 'bg-surface-container-low hover:bg-surface-container-high'
-                    }`}
-                  >
-                    <span className="w-4 h-4 rounded-full border border-outline shrink-0" style={{ backgroundColor: col.hex }} />
-                    <span className="font-label-md text-label-md text-primary font-semibold">{col.nombre}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
+            )}
 
             {/* Size Selector from Stitch */}
             <div className="flex flex-col gap-space-xs">
@@ -285,7 +295,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
               </div>
             </div>
 
-            {/* Actions: Pedir por WhatsApp & Añadir al Kit */}
+            {/* Actions: Pedir por WhatsApp & Añadir al Carrito */}
             <div className="flex flex-col sm:flex-row items-center gap-space-md pt-space-xs">
               {isAgotado ? (
                 <button
@@ -314,6 +324,19 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({ product, o
                   </button>
                 </>
               )}
+            </div>
+
+            {/* Payment & Shipping Trust Strip */}
+            <div className="pt-3 border-t border-surface-container-high flex flex-wrap items-center justify-between gap-2 text-xs text-on-surface-variant">
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-secondary text-[18px]">verified</span>
+                <span>Cambio de talla garantizado</span>
+              </div>
+              <div className="flex items-center gap-1.5 font-medium text-primary">
+                <span className="px-2 py-0.5 rounded bg-surface-container-high font-bold text-[10px] text-[#742284]">Yape</span>
+                <span className="px-2 py-0.5 rounded bg-surface-container-high font-bold text-[10px] text-[#00A499]">Plin</span>
+                <span className="px-2 py-0.5 rounded bg-surface-container-high font-bold text-[10px] text-[#002A8F]">BCP / BBVA</span>
+              </div>
             </div>
           </div>
         </div>

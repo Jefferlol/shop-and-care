@@ -116,6 +116,25 @@ export const CartDrawer: React.FC = () => {
 
           {/* Body */}
           <div className="flex-1 overflow-y-auto p-space-md flex flex-col gap-space-sm">
+            {/* Free Shipping Motivation Bar */}
+            {cart.length > 0 && (
+              <div className="bg-surface-container-low p-3 rounded-xl border border-surface-container-high mb-1">
+                <div className="flex items-center justify-between text-xs font-bold mb-1.5">
+                  <span className="flex items-center gap-1 text-primary-container">
+                    <span className="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
+                    {cartTotal >= 180 ? '🎉 ¡Envío Gratis a todo el Perú desbloqueado!' : `Agrega S/ ${(180 - cartTotal).toFixed(2)} más para Envío Gratis`}
+                  </span>
+                  <span className="text-secondary font-extrabold">{Math.min(100, Math.round((cartTotal / 180) * 100))}%</span>
+                </div>
+                <div className="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+                  <div
+                    className="bg-secondary-fixed-dim h-full transition-all duration-500 rounded-full"
+                    style={{ width: `${Math.min(100, (cartTotal / 180) * 100)}%` }}
+                  />
+                </div>
+              </div>
+            )}
+
             {cart.length === 0 ? (
               <div className="flex-1 flex flex-col items-center justify-center text-center p-6 gap-3">
                 <div className="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant">
@@ -280,8 +299,15 @@ export const CartDrawer: React.FC = () => {
                 </button>
               </div>
 
-              <div className="text-center font-label-sm text-[11px] text-on-surface-variant pt-1">
-                🔒 Coordinación directa con atención al cliente Shop &amp; Care
+              <div className="text-center font-label-sm text-[11px] text-on-surface-variant pt-1 flex flex-col items-center gap-1.5">
+                <span>🔒 Coordinación directa y segura con atención al cliente Shop &amp; Care</span>
+                <div className="flex items-center gap-1.5 flex-wrap justify-center">
+                  <span className="px-1.5 py-0.5 rounded bg-surface-container-high font-bold text-[10px] text-[#742284]">Yape</span>
+                  <span className="px-1.5 py-0.5 rounded bg-surface-container-high font-bold text-[10px] text-[#00A499]">Plin</span>
+                  <span className="px-1.5 py-0.5 rounded bg-surface-container-high font-bold text-[10px] text-[#002A8F]">BCP</span>
+                  <span className="px-1.5 py-0.5 rounded bg-surface-container-high font-bold text-[10px] text-[#004481]">BBVA</span>
+                  <span className="px-1.5 py-0.5 rounded bg-surface-container-high font-bold text-[10px] text-primary">Contraentrega</span>
+                </div>
               </div>
             </div>
           )}

@@ -2,7 +2,15 @@ import React from 'react';
 import { useApp } from '../context/AppContext';
 
 export const TabInicio: React.FC = () => {
-  const { navigateTo, whatsappNumber } = useApp();
+  const { navigateTo, whatsappNumber, products, addToCart, hasDiscount } = useApp();
+
+  const featuredSlugs = [
+    'scrubs-oriana-mujer',
+    'scrubs-carlos-varon',
+    'guardapolvo-moana-mujer',
+    'set-de-instrumental-basico',
+  ];
+  const featuredProducts = products.filter(p => featuredSlugs.includes(p.slug));
 
   return (
     <div className="w-full flex flex-col pt-28 bg-surface-container-lowest min-h-[calc(100vh-140px)] animate-fadeIn">
@@ -200,6 +208,151 @@ export const TabInicio: React.FC = () => {
             <div className="mt-space-md flex items-center gap-1 text-secondary font-label-md font-bold text-label-md">
               <span>Ver accesorios</span>
               <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 Bestsellers Showcase: Lo Más Vendido para Guardia e Internado */}
+      {featuredProducts.length > 0 && (
+        <section className="w-full max-w-7xl mx-auto px-margin py-space-lg">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-space-sm mb-space-lg">
+            <div className="flex flex-col gap-1">
+              <span className="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">
+                Recomendados por Internos y Residentes
+              </span>
+              <h2 className="font-headline-lg text-headline-lg text-primary tracking-tight">
+                Modelos y Kits Más Vendidos
+              </h2>
+              <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                Prendas técnicas con tecnología antifluido y equipamiento clínico listo para rotar.
+              </p>
+            </div>
+            <button
+              onClick={() => navigateTo('catalogo')}
+              className="inline-flex items-center gap-1 font-label-lg text-label-lg text-primary hover:text-secondary font-bold transition-colors cursor-pointer group"
+            >
+              <span>Ver Catálogo Completo (16 productos)</span>
+              <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+            {featuredProducts.map((p) => {
+              const displayPrice = hasDiscount ? p.precio_dto : p.precio_normal;
+              return (
+                <div
+                  key={p.id}
+                  className="group relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between border border-surface-container-high"
+                >
+                  <div className="flex flex-col">
+                    {/* Image and Badges */}
+                    <div
+                      onClick={() => navigateTo('catalogo', { producto: p.slug })}
+                      className="relative w-full aspect-[4/5] bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center mb-space-md cursor-pointer"
+                    >
+                      <img
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        alt={p.nombre}
+                        src={p.imagen || `/productos/${p.slug}.jpg`}
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = '/Logo.jpeg';
+                        }}
+                      />
+                      <div className="absolute top-2 left-2 flex flex-col gap-1 items-start">
+                        <span className="bg-primary text-on-primary font-label-sm text-[11px] px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm font-bold">
+                          Top Ventas
+                        </span>
+                        <span className="bg-tertiary-fixed text-primary font-label-sm text-[11px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold shadow-sm">
+                          -15% DTO
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Category & Title */}
+                    <span className="font-label-sm text-[11px] text-on-surface-variant uppercase font-semibold">
+                      {p.categoria}
+                    </span>
+                    <h3
+                      onClick={() => navigateTo('catalogo', { producto: p.slug })}
+                      className="font-headline-sm text-body-lg font-bold text-primary group-hover:text-secondary transition-colors cursor-pointer line-clamp-1 mt-0.5"
+                    >
+                      {p.nombre}
+                    </h3>
+
+                    {/* Price in Soles */}
+                    <div className="mt-2 flex items-baseline gap-2">
+                      <span className="font-headline-sm text-headline-sm font-bold text-primary">
+                        S/ {displayPrice.toFixed(2)}
+                      </span>
+                      <span className="font-body-sm text-xs text-on-surface-variant line-through">
+                        S/ {p.precio_normal.toFixed(2)}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="mt-4 pt-3 flex items-center gap-2 border-t border-surface-container-high">
+                    <button
+                      onClick={() => addToCart(p, p.tallas?.[0] || 'M', p.colores?.[0], 1, true)}
+                      className="flex-1 py-2 px-3 rounded-lg bg-secondary-fixed text-primary font-label-md text-label-md font-bold hover:bg-secondary-fixed-dim transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                      title="Añadir directo a la cesta"
+                    >
+                      <span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                      <span>Añadir</span>
+                    </button>
+                    <button
+                      onClick={() => navigateTo('catalogo', { producto: p.slug })}
+                      className="py-2 px-3 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-bold hover:bg-surface-container-high transition-colors cursor-pointer"
+                      title="Ver ficha de producto"
+                    >
+                      Ver
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {/* Trust & Guarantees Banner */}
+      <section className="w-full bg-surface-container-low py-space-lg border-y border-surface-container-high">
+        <div className="max-w-7xl mx-auto px-margin grid grid-cols-2 md:grid-cols-4 gap-space-md">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-primary shrink-0">
+              <span className="material-symbols-outlined text-[20px]">local_shipping</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-headline-sm text-body-sm font-bold text-primary">Envíos a Todo el Perú</span>
+              <span className="font-body-sm text-xs text-on-surface-variant">Olva Courier y Shalom express</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-primary shrink-0">
+              <span className="material-symbols-outlined text-[20px]">payments</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-headline-sm text-body-sm font-bold text-primary">Yape, Plin y Tarjetas</span>
+              <span className="font-body-sm text-xs text-on-surface-variant">Transferencias BCP, BBVA sin recargo</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-primary shrink-0">
+              <span className="material-symbols-outlined text-[20px]">swap_horiz</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-headline-sm text-body-sm font-bold text-primary">Cambio de Talla Ágil</span>
+              <span className="font-body-sm text-xs text-on-surface-variant">Garantía total de comodidad</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-primary shrink-0">
+              <span className="material-symbols-outlined text-[20px]">support_agent</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-headline-sm text-body-sm font-bold text-primary">Atención por WhatsApp</span>
+              <span className="font-body-sm text-xs text-on-surface-variant">Respuesta inmediata de guardia</span>
             </div>
           </div>
         </div>
