@@ -73,22 +73,27 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   // Sincronizar URL hash y parámetros
   const syncFromUrl = () => {
-    const hash = window.location.hash.toLowerCase();
+    const rawHash = window.location.hash;
+    const [hashTab, hashQuery] = rawHash.split('?');
+    const hash = (hashTab || '').toLowerCase();
     const searchParams = new URLSearchParams(window.location.search);
+    const hashParams = new URLSearchParams(hashQuery || '');
+
+    const getParam = (key: string) => hashParams.get(key) || searchParams.get(key);
 
     // UTMs
     setUtms({
-      utm_source: searchParams.get('utm_source') || '',
-      utm_campaign: searchParams.get('utm_campaign') || '',
-      utm_term: searchParams.get('utm_term') || '',
+      utm_source: getParam('utm_source') || '',
+      utm_campaign: getParam('utm_campaign') || '',
+      utm_term: getParam('utm_term') || '',
     });
 
-    const catParam = searchParams.get('categoria');
+    const catParam = getParam('categoria');
     if (catParam) {
       setSelectedCategory(catParam);
     }
 
-    const prodParam = searchParams.get('producto');
+    const prodParam = getParam('producto');
     if (prodParam) {
       setSelectedProductSlug(prodParam);
     } else {
